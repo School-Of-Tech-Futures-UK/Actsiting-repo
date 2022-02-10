@@ -1,6 +1,62 @@
 import React from 'react'
 import './App.css';
+import { ShowHomepage } from "./homepage.js"
 
+/* when submit button clicked then it pushes the new venue details
+into the <ul> tag in the homepage component (in homepage.js) */
+
+
+/* function AddVenueButton(e) {
+  const getVenueInfo = async () => {
+    const resp = await fetch('http://localhost:3000/get_venue_info')
+    return await resp.json()
+  }
+  
+  
+  const addVenue = async (e) => {
+    //ID!!!
+    const name = document.getElementById('venueName').value
+    //Photo!!!
+    const capacity = document.getElementById('venueCapacity').value
+    const address = document.getElementById('venueAddress').value
+    const startTime = document.getElementById('venueStartTime').value //syntax?
+    const endTime = document.getElementById('venueEndTime').value //syntax?
+    const email = document.getElementById('venueOwnerEmail').value
+    const startDate = document.getElementById('venueStartDate').value //syntax?
+    const endDate = document.getElementById('venueEndDate').value //syntax?
+  
+  
+    const info = JSON.stringify(
+        {
+            //venueID: ID,
+            venueName: name,
+            venueOwnerEmail: email,
+            venueCapacity: capacity,
+            venueAddress: address,
+            venueStartTime: startTime,
+            venueEndTime: endTime,
+            venueStartDate: startDate,
+            venueEndDate: endDate
+        }
+    )
+  
+    await fetch('http://localhost:3000/venue_info', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: info
+    })
+  
+    document.getElementById('venue-card-item').innerHTML = ''
+    getVenueInfo().then(
+        json => json.forEach(info => {
+            const listElement = document.createElement('li')
+            listElement.innerHTML = `Name: ${info.venueName}, Capacity: ${info.capacity}, Location: ${info.venueGeoLocation}`
+            document.getElementById('venue-card-item').appendChild(listElement)
+        }
+        ))
+  
+  }
+} */
 
 
 function App() {
@@ -83,55 +139,6 @@ P.S. problems that might occur when uncomment:
 1. might need to change link localhost:3000 into .../get_venue_info or .../venue_info, later different one
 2. Note to Mundy: venuelist and everything else need to rendered accordingly to react rules, u did this in pure html
 3. i might need to change how date/time values are read from text fields
-
-/*const getVenueInfo = async () => {
-  const resp = await fetch('http://localhost:3000/get_venue_info')
-  return await resp.json()
-}
-
-
-const addVenue = async (e) => {
-  //ID!!!
-  const name = document.getElementById('venueName').value
-  //Photo!!!
-  const capacity = document.getElementById('venueCapacity').value
-  const address = document.getElementById('venueAddress').value
-  const startTime = document.getElementById('venueStartTime').value //syntax?
-  const endTime = document.getElementById('venueEndTime').value //syntax?
-  const email = document.getElementById('venueOwnerEmail').value
-  const startDate = document.getElementById('venueStartDate').value //syntax?
-  const endDate = document.getElementById('venueEndDate').value //syntax?
-
-
-  const info = JSON.stringify(
-      {
-          //venueID: ID,
-          venueName: name,
-          venueOwnerEmail: email,
-          venueCapacity: capacity,
-          venueAddress: address,
-          venueStartTime: startTime,
-          venueEndTime: endTime,
-          venueStartDate: startDate,
-          venueEndDate: endDate
-      }
-  )
-
-  await fetch('http://localhost:3000/venue_info', {
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
-      body: info
-  })
-
-  document.getElementById('venuelist').innerHTML = ''
-  getVenueInfo().then(
-      json => json.forEach(info => {
-          const listElement = document.createElement('li')
-          listElement.innerHTML = `Name: ${info.venueName} , Capacity: ${info.capacity} ,Location: ${info.venueGeoLocation}`
-          document.getElementById('venuelist').appendChild(listElement)
-      }
-      ))
-
-} */
+*/
 
 export default App;

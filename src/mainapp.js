@@ -8,9 +8,10 @@ import React from 'react'
 function MainApp() {
     return (
         <>
+        <h1>Hello World!</h1>
             <AddVenuePage />
-            <Homepage />
-            <VenueSummaryPage />
+            <ShowHomepage />
+            <AddVenueSummaryPage />
         </>
     )
 

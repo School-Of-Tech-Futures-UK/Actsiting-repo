@@ -1,4 +1,6 @@
-//homepage component -- will pull in the AddVenuePage component as part of its hierarchy
+/* homepage component -- will pull in the relevant
+components from venueSummaryPage and AddVenuePage files
+as part of its hierarchy */
 
 // AddVenuePage feeds into Homepage
 // Info populated from VenueSummaryPage updates state in Homepage "venue info" bit
@@ -6,8 +8,7 @@
 
 import React from 'react'
 import { useState, useEffect } from "react";
-import {} from "./venueCardHomepage.js"
-
+import { HomepageVenueImage, HomepageVenueDetails, HomepageEditButton, VenueCard } from "./venueCardHomepage.js"
 
 
 function HomepageAddButton() {
@@ -16,7 +17,7 @@ function HomepageAddButton() {
     )
 }
 
-function Homepage() {
+function ShowHomepage() {
 
     const [clickAddVenue, setClickAddVenue] = useState()
 
@@ -25,10 +26,13 @@ function Homepage() {
     return (
         <>
             <h1>Venue Homepage</h1>
-            <section id='add-new-venue'></section>
+            <section id='venue-card-container'>
+                <ul id='venue-card-item'></ul>
+            </section>
+            <button type="button" name="button" id="add-new-venue-button" onClick="HomepageAddButton(event);">Add New Venue</button>
         </>
 
     )
 }
 
-export default Homepage
+export default ShowHomepage
