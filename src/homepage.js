@@ -6,26 +6,9 @@
 
 import React from 'react'
 import { useState, useEffect } from "react";
+import {} from "./venueCardHomepage.js"
 
 
-function HomepageVenueImage() {
-    return (
-
-    )
-}
-
-
-function HomepageVenueDetails() {
-    return (
-        
-    )
-}
-
-function HomepageEditButton() {
-    return (
-        
-    )
-}
 
 function HomepageAddButton() {
     return (
@@ -35,10 +18,15 @@ function HomepageAddButton() {
 
 function Homepage() {
 
-    const [editVenue, setEditVenue] = useState([]);
-    const [addVenue, setAddVenue] = useState()
+    const [clickAddVenue, setClickAddVenue] = useState()
+
+
 
     return (
+        <>
+            <h1>Venue Homepage</h1>
+            <section id='add-new-venue'></section>
+        </>
 
     )
 }
