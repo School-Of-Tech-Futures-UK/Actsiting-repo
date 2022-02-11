@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css';
-import { ShowHomepage } from "./homepage.js"
 
 /* when submit button clicked then it pushes the new venue details
 into the <ul> tag in the homepage component (in homepage.js) */

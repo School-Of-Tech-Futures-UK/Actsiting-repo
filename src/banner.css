@@ -1,0 +1,29 @@
+.banner {
+    background: url("https://th.bing.com/th/id/R.018091b8a952b230db8c5dfde7a10c76?rik=%2f347HW4fGnmbkg&riu=http%3a%2f%2frookerville.com%2fwp-content%2fuploads%2f2013%2f04%2fef2456ede8634cc499bedaec3add1d2c.jpg&ehk=2KqRXYRgG1QkxFj1Xq%2b53LIN5tqCuiKg7uXAlG4f3OM%3d&risl=&pid=ImgRaw&r=0") center ;background-repeat: no-repeat;
+    height: 70vh;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.banner-info {
+    background-color:#faebd7;
+    color: black;
+    padding: 25vh 50px 40px 50px;
+    width: 300px;
+    background-color: rgba(250, 235, 215, 0.7);
+    text-align: center;
+}
+
+.banner-info-button {
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.banner-info-button:hover {
+    background-color: white;
+    color: #ff7779;
+}

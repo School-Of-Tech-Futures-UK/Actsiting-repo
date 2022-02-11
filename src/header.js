@@ -19,7 +19,7 @@ function Header() {
         </div>
 
         <div className='header-right-icons'>
-          <p>Login / sign up</p>
+          <p>Login</p>
           <Avatar />
         </div>
 
