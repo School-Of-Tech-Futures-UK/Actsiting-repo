@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AddVenue from './addVenuePage';
 import './index.css';
-import MainApp from './mainApp';
+//import MainApp from './mainApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainApp />
+    <AddVenue />
   </React.StrictMode>,
   document.getElementById('root')
 );

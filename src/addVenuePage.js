@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+import './addVenuePage.css';
 
 /* when submit button clicked then it pushes the new venue details
 into the <ul> tag in the homepage component (in homepage.js) */
@@ -60,7 +60,7 @@ into the <ul> tag in the homepage component (in homepage.js) */
 //need to add price input field as well (venuePrice) e.g. price per day
 //need to add Regular expression functions to validate each input field
 
-function App() {
+function AddVenue() {
   return (
     <div className="App">
       <header className="App-header">
@@ -142,4 +142,4 @@ P.S. problems that might occur when uncomment:
 3. i might need to change how date/time values are read from text fields
 */
 
-export default App;
+export default AddVenue;
