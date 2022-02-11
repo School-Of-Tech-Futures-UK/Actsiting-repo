@@ -5,7 +5,7 @@ import './addVenuePage.css';
 into the <ul> tag in the homepage component (in homepage.js) */
 
 
-/* function AddVenueButton(e) {
+ function AddVenueButton(e) {
   const getVenueInfo = async () => {
     const resp = await fetch('http://localhost:3000/get_venue_info')
     return await resp.json()
@@ -55,7 +55,7 @@ into the <ul> tag in the homepage component (in homepage.js) */
         ))
   
   }
-} */
+}
 
 //need to add price input field as well (venuePrice) e.g. price per day
 //need to add Regular expression functions to validate each input field
@@ -112,9 +112,9 @@ function AddVenue() {
         <div>
           <button id="submit" onclick="addVenue(event);">SUBMIT </button> 
         </div>
-        {/* <div>
+        <div>
         <ul id="venuelist"> </ul>
-        </div> */}
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
