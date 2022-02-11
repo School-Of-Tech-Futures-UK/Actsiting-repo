@@ -6,6 +6,7 @@ import React from 'react';
 import App from './App';
 import Homepage from './homepage';
 import Header from './header'
+import Footer from './footer'
 
 
 // to change <App /> to instead be <AddVenuePage /> once page created
@@ -14,6 +15,7 @@ function MainApp() {
         <>
         <Header />
         <Homepage />
+        <Footer />
         </>
     )
 
