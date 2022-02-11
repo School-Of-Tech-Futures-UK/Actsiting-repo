@@ -3,7 +3,6 @@ other component gets passed through/re-routed through
 */
 
 import React from 'react';
-import App from './App';
 import Homepage from './homepage';
 import Header from './header';
 import Footer from './footer';
@@ -27,7 +26,6 @@ function MainApp() {
                     <Homepage />
                 </Route>
             </Switch>
-
 
             <Footer />
         </ Router>
