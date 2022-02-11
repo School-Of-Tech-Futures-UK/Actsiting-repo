@@ -33,7 +33,6 @@ function Homepage() {
           venuePrice="£60/night"
         />
       </div>
-      <Footer />
     </div>
   )
 }
