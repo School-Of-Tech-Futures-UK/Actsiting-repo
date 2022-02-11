@@ -57,6 +57,8 @@ into the <ul> tag in the homepage component (in homepage.js) */
   }
 } */
 
+//need to add price input field as well (venuePrice) e.g. price per day
+//need to add Regular expression functions to validate each input field
 
 function App() {
   return (
