@@ -1,8 +1,67 @@
 import React from 'react'
 import './addVenuePage.css';
 
+function addVenuePage() {
+  return (
+    <>
+      <div>
+      <input type="text" id="venueName" placeholder="venueName"></input>    
+    </div>
+
+    <div>
+    <button id="submit" onClick={() => AddVenueButton()}>SUBMIT </button> 
+    </div>
+
+    <div>
+    <ul id="venuelist"></ul>
+    </div>
+    </>
+  
+  )
+} 
+
+
+function AddVenueButton() {
+  console.log('i was clicked')
+  const getVenueInfo = async () => {
+    const resp = await fetch('http://localhost:3001/get_venue_info')
+    return await resp.json()
+  }
+
+  const addVenue = async (e) => {
+    const name = document.getElementById('venueName').value 
+  
+    const info = JSON.stringify(
+        {
+            venueName: name
+        }
+    )
+  
+    await fetch('http://localhost:3001/venue_info', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: info
+    })
+  
+    document.getElementById('venuelist').innerHTML = ''
+    getVenueInfo().then(
+        json => json.forEach(info => {
+            const listElement = document.createElement('li')
+            listElement.innerHTML = `Name: ${info.venueName}`
+            document.getElementById('venuelist').appendChild(listElement)
+        }
+        ))
+        console.log(document.getElementById('venuelist'))
+  }
+}
+
+
+export default addVenuePage;
+
+
+
 /* when submit button clicked then it pushes the new venue details
-into the <ul> tag in the homepage component (in homepage.js) */
+into the <ul> tag in the homepage component (in homepage.js)
 
 
  function AddVenueButton(e) {
@@ -60,6 +119,7 @@ into the <ul> tag in the homepage component (in homepage.js) */
 //need to add price input field as well (venuePrice) e.g. price per day
 //need to add Regular expression functions to validate each input field
 
+/*
 function AddVenue() {
   return (
     <div className="App">
@@ -68,65 +128,67 @@ function AddVenue() {
       <form action="">
       <h2 class="heading">LIST YOUR VENUE</h2>
 
-      {/* venueName input field */}
+      //venueName input field
       <div class="controls">   
         <label for="Venue name">Venue name </label>
         <input type="text" id="venueName" placeholder="venueName"></input>    
       </div>
 
-      {/* venueOwnerEmail input field */}
+      //venueOwnerEmail input field
       <div class="controls">   
         <label for="Email">Email </label>
         <input type="text" id="venueOwnerEmail" placeholder="venueOwnerEmail"></input>    
       </div>
 
-      {/* venueCapacity input field */}
+      //venueCapacity input field
       <div class="controls">   
         <label for="Capacity">Capacity </label>
         <input type="number" id="venueCapacity" placeholder="venueCapacity"></input>    
       </div>
 
-      {/* venueAddress input field */}
+      //venueAddress input field
       <div class="controls">   
         <label for="Address">Address </label>
         <input type="text" id="venueAddress" placeholder="venueAddress"></input>    
       </div>
 
-      {/* Opening Hours input field */}
+      //Opening Hours input field
       <div class="controls">   
         <label for="Opening Hours">Opening Hours </label>
         <input type="time" id="venueStartTime" placeholder="venueOpeningHours" value="09:00"></input> to 
         <input type="time" id="venueEndTime" placeholder="venueOpeningHours" value="20:00"></input>   
       </div>
 
-      {/* Availability input field */}
+      //Availability input field
       <div class="controls">   
         <label for="Available Dates">Available Dates </label>
-        <input type="date" id="venueStartDate" placeholder="venueAvailability" value="<?php echo date('Y-m-d'); ?>"></input> to 
-        <input type="date" id="venueEndDate" placeholder="venueAvailability" value="<?php echo date('Y-m-d'); ?>"></input>   
+        <input type="date" id="venueStartDate" placeholder="venueAvailability"></input> to 
+        <input type="date" id="venueEndDate" placeholder="venueAvailability"></input>   
       </div>
 
       </form>
 
-      <br></br>
-        <div>
-          <button id="submit" onclick="addVenue(event);">SUBMIT </button> 
-        </div>
-        <div>
-        <ul id="venuelist"> </ul>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <br></br>
+
+<div>
+<ul id="venuelist"> </ul>
+</div>
+<a
+  className="App-link"
+  href="https://reactjs.org"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Learn React
+</a>
+</header>
+</div>
+);
 }
+
+      
+
+
 
 //comments by Anna for tomorrow
 /*
@@ -142,4 +204,3 @@ P.S. problems that might occur when uncomment:
 3. i might need to change how date/time values are read from text fields
 */
 
-export default AddVenue;
