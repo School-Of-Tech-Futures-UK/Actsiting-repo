@@ -1,7 +1,7 @@
 import React from 'react'
 import './addVenuePage.css';
 
-/*
+
 function addVenuePage() {
   return (
     <>
@@ -25,7 +25,8 @@ function addVenuePage() {
 function AddVenueButton() {
   console.log('i was clicked')
   const getVenueInfo = async () => {
-    const resp = await fetch('http://localhost:3001/get_venue_info')
+    const resp = await fetch('https://o8begr253f.execute-api.eu-west-2.amazonaws.com/test')
+    console.log('i was clicked twice')
     return await resp.json()
   }
 
@@ -38,7 +39,7 @@ function AddVenueButton() {
         }
     )
   
-    await fetch('http://localhost:3001/venue_info', {
+    await fetch('https://o8begr253f.execute-api.eu-west-2.amazonaws.com/test', {
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: info
@@ -59,7 +60,7 @@ function AddVenueButton() {
 
 export default addVenuePage;
 
--------------------------------------------------
+//-------------------------------------------------
 
 /* when submit button clicked then it pushes the new venue details
 into the <ul> tag in the homepage component (in homepage.js)
@@ -120,7 +121,7 @@ into the <ul> tag in the homepage component (in homepage.js)
 //need to add price input field as well (venuePrice) e.g. price per day
 //need to add Regular expression functions to validate each input field
 */
-
+/*//
 function AddVenuePage() {
   return (
     <div className="App">

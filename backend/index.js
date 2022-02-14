@@ -13,11 +13,11 @@ server.get('/get_venue_info', (req, res) => {
 })
 
 server.post('/venue_info', (req, res) => {
-    if (typeof req.body != 'object' || req.body.venueID === undefined){ 
+   /* if (typeof req.body != 'object' || req.body.venueID === undefined){ 
         res.status(400)
         res.send('Error')
         return
-    } 
+    } */ 
     venueInfo.push(req.body)
     console.log(req.body)
     res.status(200)
