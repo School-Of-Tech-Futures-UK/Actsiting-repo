@@ -2,11 +2,23 @@ const express = require('express');
 const server = express();
 server.use(express.json());
 var cors = require('cors');
+const { application } = require('express');
 server.use(cors())
-const serverlessExpress = require('@vendia/serverless-express')
+//const serverlessExpress = require('@vendia/serverless-express')
 
 
-const venueInfo = []
+const venueInfo = [
+    {
+    name: 'royal albert hall',
+    genre: 'classical'
+    },
+
+    {
+    name: 'edmunds house',
+    genre: 'edmunds genre'
+    }
+
+]
 
 server.get('/get_venue_info', (req, res) => {
     res.json(venueInfo)
@@ -24,4 +36,7 @@ server.post('/venue_info', (req, res) => {
     res.send('ok')
 })
 
-exports.handler = serverlessExpress({ server });
+
+//exports.handler = serverlessExpress({ server });
+
+server.listen(3000)
