@@ -1,64 +1,116 @@
 import React from 'react'
 import './addVenuePage.css';
+import { useState, useEffect } from 'react';
+    
+// function ListOfVenue(){
+//   return (
+//     <div>
+//       <ul id="venueList"></ul>
+//       </div>
+//   )
+// }
 
 
-function addVenuePage() {
-  return (
-    <>
-      <div>
-      <input type="text" id="venueName" placeholder="venueName"></input>    
-    </div>
-
-    <div>
-    <button id="submit" onClick={() => AddVenueButton()}>SUBMIT </button> 
-    </div>
-
-    <div>
-    <ul id="venuelist"></ul>
-    </div>
-    </>
-  
-  )
-} 
 
 
-function AddVenueButton() {
-  console.log('i was clicked')
-  const getVenueInfo = async () => {
-    const resp = await fetch('https://o8begr253f.execute-api.eu-west-2.amazonaws.com/test')
-    console.log('i was clicked twice')
-    return await resp.json()
-  }
+function AddVenuePage() {
+  const [venueName, setVenueName] = useState([])
 
-  const addVenue = async (e) => {
-    const name = document.getElementById('venueName').value 
-  
-    const info = JSON.stringify(
-        {
-            venueName: name
+  // const edmundVenue = setVenueName(venueName = {GetVenueInfo()})
+
+  const PostVenueName = async (e) => {
+    
+    const venueBoard = JSON.stringify(
+        {   
+            venue: "Edmund's house"
         }
     )
   
-    await fetch('https://o8begr253f.execute-api.eu-west-2.amazonaws.com/test', {
-        headers: { 'Content-Type': 'application/json' },
+    await fetch('http://localhost:3000/venue_info', {
+        headers:{ 'Content-Type': 'application/json'},
         method: 'POST',
-        body: info
+        body: venueBoard
     })
-  
-    document.getElementById('venuelist').innerHTML = ''
-    getVenueInfo().then(
-        json => json.forEach(info => {
-            const listElement = document.createElement('li')
-            listElement.innerHTML = `Name: ${info.venueName}`
-            document.getElementById('venuelist').appendChild(listElement)
-        }
-        ))
-        console.log(document.getElementById('venuelist'))
+
+    // need to fix this bottom function!
+    await fetch('http://localhost:3000/venue_info', {
+      headers:{ 'Content-Type': 'application/json'},
+      method: 'GET',
+      body: venueBoard
+  })
+
+    setVenueName(venueName.push({venueBoard}))
   }
+
+  return (
+    <div className='add-venue-page'>
+      <input type="text" id="venueName" placeholder="venueName"></input>
+      
+      <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
+      {/* <ListOfVenue venues={venueName} /> */}
+      <p>{venueName}</p>
+    </div>
+  )
 }
 
+export default AddVenuePage;
 
-export default addVenuePage;
+//-------------------------------------------------------------------
+
+// function AddVenueButton() {
+//   console.log('i was clicked')
+//   const getVenueInfo = async () => {
+//     const resp = await fetch('http://localhost:3000/get_venue_info') 
+//     console.log('i was clicked twice')
+//     return await resp.json()
+//   }
+
+//   const addVenue = async (e) => {
+//     const name = document.getElementById('venueName').value 
+  
+//     const info = JSON.stringify(
+//         {
+//             venueName: name
+//         }
+//     )
+  
+//     await fetch('http://localhost:3000/venue_info', {
+//         headers: { 'Content-Type': 'application/json' },
+//         method: 'POST',
+//         body: info
+//     })
+  
+     
+
+//     document.getElementById('venuelist').innerHTML = ''
+
+//     getVenueInfo().then(
+//         json => json.forEach(info => {
+//             const listElement = document.createElement('li')
+//             listElement.innerHTML = `Name: ${info.venueName}`
+//             document.getElementById('venuelist').appendChild(listElement)
+//         }
+//         )
+//         console.log(document.getElementById('venuelist'))
+//   }
+// }
+
+// function AddVenueName() {
+//   return (
+//     <div>
+//       <input type="text" id="venueName" placeholder="venueName"></input>
+//       </div>
+//   )
+// }
+
+// function AddVenueButton(){
+//   return (
+//     <div>
+//       <button id="submit" onClick=({onButtonClick})>SUBMIT </button> 
+//    </div>
+//   )
+//   }
+
 
 //-------------------------------------------------
 
