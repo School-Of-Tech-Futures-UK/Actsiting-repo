@@ -1,0 +1,5 @@
+CREATE TABLE Listed_Venues (
+   venue_id INTEGER GENERATED ALWAYS AS IDENTITY,
+   venue_name VARCHAR(255) NOT NULL,
+   PRIMARY KEY(venue_id)
+);

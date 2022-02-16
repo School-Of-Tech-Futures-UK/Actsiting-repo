@@ -2,22 +2,10 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
     
-// function ListOfVenue(){
-//   return (
-//     <div>
-//       <ul id="venueList"></ul>
-//       </div>
-//   )
-// }
-
-
-
 
 function AddVenuePage() {
   const [venueName, setVenueName] = useState([])
   const inputRef = useRef(null)
-
-  // const edmundVenue = setVenueName(venueName = {GetVenueInfo()})
 
   const PostVenueName = async (e) => {
     console.log(inputRef)
