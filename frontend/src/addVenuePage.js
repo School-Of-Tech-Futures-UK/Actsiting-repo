@@ -1,6 +1,6 @@
 import React from 'react'
 import './addVenuePage.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
     
 // function ListOfVenue(){
 //   return (
@@ -15,40 +15,41 @@ import { useState, useEffect } from 'react';
 
 function AddVenuePage() {
   const [venueName, setVenueName] = useState([])
+  const inputRef = useRef(null)
 
   // const edmundVenue = setVenueName(venueName = {GetVenueInfo()})
 
   const PostVenueName = async (e) => {
-    
+    console.log(inputRef)
     const venueBoard = JSON.stringify(
         {   
-            venue: "Edmund's house"
+            venue: inputRef.current.value
         }
     )
-  
+    
     await fetch('http://localhost:3000/venue_info', {
         headers:{ 'Content-Type': 'application/json'},
         method: 'POST',
         body: venueBoard
     })
 
-    // need to fix this bottom function!
-    await fetch('http://localhost:3000/venue_info', {
-      headers:{ 'Content-Type': 'application/json'},
-      method: 'GET',
-      body: venueBoard
-  })
+    const response = await fetch('http://localhost:3000/venue_info')
 
-    setVenueName(venueName.push({venueBoard}))
+    const json = await response.json()
+    console.log(json)
+    setVenueName(json)
   }
+  
 
   return (
     <div className='add-venue-page'>
-      <input type="text" id="venueName" placeholder="venueName"></input>
+      
+      <input ref = {inputRef} type="text" id="venueName" placeholder="venueName"></input>
       
       <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
-      {/* <ListOfVenue venues={venueName} /> */}
-      <p>{venueName}</p>
+      
+      <p>{venueName.map(place => <p>{place.venue}</p>)}</p>
+      
     </div>
   )
 }
