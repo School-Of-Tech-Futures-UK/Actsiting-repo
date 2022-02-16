@@ -26,14 +26,14 @@ function AddVenuePage() {
             venue: inputRef.current.value
         }
     )
-    
-    await fetch('http://localhost:3000/venue_info', {
+
+    await fetch(process.env.REACT_APP_URI + "/venue_info", {
         headers:{ 'Content-Type': 'application/json'},
         method: 'POST',
         body: venueBoard
     })
 
-    const response = await fetch('http://localhost:3000/venue_info')
+    const response = await fetch(process.env.REACT_APP_URI + "/venue_info")
 
     const json = await response.json()
     console.log(json)

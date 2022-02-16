@@ -1,9 +1,9 @@
 FROM node:latest
 
-ADD build /build
+ADD . /build/
 
-RUN cd /build && npm install -g serve
+RUN cd /build && rm -rf node_modules && npm install && npm install -g create-react-app
 
 EXPOSE 3000
 
-CMD cd /build && serve -s .
+CMD cd /build && npm start
