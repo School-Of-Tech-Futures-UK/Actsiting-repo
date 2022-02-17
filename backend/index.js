@@ -4,14 +4,14 @@ server.use(express.json());
 var cors = require('cors');
 const { application } = require('express');
 server.use(cors())
-const Postgres = require('pg').Postgres
+const Postgres = require('pg-promise')();
 //const serverlessExpress = require('@vendia/serverless-express')
 
 const dbServer = process.env.DB_HOSTNAME || '127.0.0.1'
 const dbPassword = process.env.DB_PASSWORD
 
 
-const db = new Postgres({
+const db = Postgres({
     host: dbServer,
     database: 'postgres',
     user: 'postgres',
@@ -22,9 +22,15 @@ const db = new Postgres({
 const venueInfo = []
 
 
+server.get('/venue_info/:id', async (req, res) => {
+    const storeVenue = await db.query(`SELECT venue_id, venue_name FROM Listed_Venues where venue_id=${req.params.id}`)
+    res.send(storeVenue)
+    // res.json(venueInfo)
+})
+
 
 server.get('/venue_info', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name FROM Listed_Venues where venue_id=${req.params.id}`)
+    const storeVenue = await db.query(`SELECT venue_id, venue_name FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -36,11 +42,11 @@ server.post('/venue_info', (req, res) => {
         res.send('Error')
         return
     } */ 
-    const { venue_id, venue_name } = req.body.venue
+    const venue_name  = req.body.venue
     
     db.query(
-        'INSERT INTO Listed_Venues (venue_id, venue_name)',
-        [venue_id, venue_name]
+        'INSERT INTO listed_venues (venue_name) VALUES ($1) RETURNING venue_id',
+        [venue_name]
     )
     //venueInfo.push(req.body)
     console.log(req.body)
