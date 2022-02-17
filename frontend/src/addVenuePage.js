@@ -71,7 +71,7 @@ function AddVenuePage() {
 
       <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
       
-      <p>{venueName.map(place => <p>{place.venue}</p>)}</p>
+      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}</p>)}</p>
       
     </div>
   )
