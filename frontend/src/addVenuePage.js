@@ -155,11 +155,15 @@ into the <ul> tag in the homepage component (in homepage.js)
     //Photo!!!
     const capacity = document.getElementById('venueCapacity').value
     const address = document.getElementById('venueAddress').value
-    const startTime = document.getElementById('venueStartTime').value //syntax?
-    const endTime = document.getElementById('venueEndTime').value //syntax?
+    const startTime = document.getElementById('venueStartTime').value //syntax? DO WE NEED THIS??
+    const endTime = document.getElementById('venueEndTime').value //syntax? DO WE NEED THIS??
     const email = document.getElementById('venueOwnerEmail').value
-    const startDate = document.getElementById('venueStartDate').value //syntax?
-    const endDate = document.getElementById('venueEndDate').value //syntax?
+    const startDate = document.getElementById('venueStartDate').value //syntax? DO WE NEED THIS??
+    const endDate = document.getElementById('venueEndDate').value //syntax? DO WE NEED THIS??
+    add availability input field 
+    add description input field 
+    pull in Booking Status via event ID from Acscent
+
   
   
     const info = JSON.stringify(
