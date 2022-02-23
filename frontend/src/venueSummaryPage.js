@@ -1,10 +1,7 @@
 import React from 'react'
-
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import styles from "./venueSummaryPage.css";
-import { RiCloseLine } from "react-icons/ri";
-import ReactDom from 'react-dom';
+import './venueSummaryPage.css'
 
 
 const VenueSummaryPage = () => {

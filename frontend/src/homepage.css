@@ -1,4 +1,6 @@
-.homepage-venue-card {
+.homepage-venue-card-container {
     display: flex;
+    flex-wrap: wrap;
     padding: 30px;
+    justify-content: center;
 }
