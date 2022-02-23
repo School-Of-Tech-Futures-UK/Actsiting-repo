@@ -49,3 +49,9 @@
     background: transparent;
     border-radius: 5%;
 }
+
+.venue-card-item-info > button:hover {
+    background-color: white;
+    color: #ff7779;
+    cursor: pointer;
+}

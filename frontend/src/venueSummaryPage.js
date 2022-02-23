@@ -3,11 +3,14 @@ import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './venueSummaryPage.css'
 
-
 const VenueSummaryPage = () => {
+
   return (
     <>
-      <div>Hello World</div>
+      I'm the Venue Summary Page
+      <Link to='/'>
+        <button>Back to Homepage</button>
+      </Link>
     </>
   )}
 

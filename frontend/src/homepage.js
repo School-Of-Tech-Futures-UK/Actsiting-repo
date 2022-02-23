@@ -5,13 +5,14 @@ import VenueCard from './venueCard'
 import Footer from './footer'
 //import App from './App'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import VenueSummaryPage from './venueSummaryPage'
 
 
 function Homepage() {
   return (
+    <>
     <div className='homepage'>
       <Banner />
-      {/* <Link to='/venue-summary'> */}
         <div className='homepage-venue-card-container'>
           <div className='homepage-venue-card'>
             <VenueCard
@@ -35,8 +36,8 @@ function Homepage() {
             />
             </div>
         </div>
-      {/* </Link> */}
     </div>
+    </>
   )
 }
 

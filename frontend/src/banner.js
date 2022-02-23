@@ -9,8 +9,8 @@ function Banner() {
         <div className='banner-info'>
             <h1>Welcome [user]</h1>
             <h3>It's time to get 'Actsited'... with venue hosting made easy!</h3>
-            <Link to='/add-venue'>
-              <Button variant='outlined' className='banner-info-button'>
+            <Link to='/add-venue' className='banner-info-button'>
+              <Button variant='outlined'>
                   Add New Venue
               </Button>
               </Link>
