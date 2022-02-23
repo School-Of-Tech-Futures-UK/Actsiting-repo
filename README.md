@@ -34,7 +34,7 @@ $ cd ..
 
 ```
 ### Allow access on your computer and Deploy
-Go to line 28 in infrastructure/lib/infrastructure-stack.js and change the IP address to your public IP address for your computer. Save this file and continue running the following commands in the terminal.
+Go to line 45 in infrastructure/lib/infrastructure-stack.js and change the IP address to your public IP address for your computer. Save this file and continue running the following commands in the terminal.
 
 ```
 
