@@ -5,9 +5,17 @@ Venue hosting system for home owners to list their venues for events
 ## How to Run the app 
 
 ### Cloning the respository
+Click the link below to head to our repo
 
 `https://github.com/School-Of-Tech-Futures-UK/Actsiting-repo`
 
+Run the following command in the terminal to git clone this repo based on its SSH key (copy this)
+
+``` 
+
+$ git clone git@github.com:School-Of-Tech-Futures-UK/Actsiting-repo.git
+
+```
 ### Setup and start the server
 
 Run the following commands in the terminal 
