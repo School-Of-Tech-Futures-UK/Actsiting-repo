@@ -23,14 +23,14 @@ const venueInfo = []
 
 
 server.get('/venue_info/:id', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name FROM Listed_Venues where venue_id=${req.params.id}`)
+    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date FROM Listed_Venues where venue_id=${req.params.id}`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
 
 
 server.get('/venue_info', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name FROM Listed_Venues`)
+    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -43,10 +43,16 @@ server.post('/venue_info', (req, res) => {
         return
     } */ 
     const venue_name  = req.body.venue
+    const venue_capacity = req.body.capacity
+    const venue_address = req.body.address
+    const venue_geolocation = req.body.geolocation
+    const venue_owner_email = req.body.email 
+    const venue_start_date = req.body.startDate 
+    const venue_end_date = req.body.endDate 
     
     db.query(
-        'INSERT INTO listed_venues (venue_name) VALUES ($1) RETURNING venue_id',
-        [venue_name]
+        'INSERT INTO listed_venues (venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING venue_id',
+        [venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date]
     )
     //venueInfo.push(req.body)
     console.log(req.body)
