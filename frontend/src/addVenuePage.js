@@ -6,8 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 function AddVenuePage() {
   const [venueName, setVenueName] = useState([])
   const inputRefName = useRef(null)
-
-  /*const [venueCapacity, setVenueCapacity] = useState([])
+  const [venueCapacity, setVenueCapacity] = useState([])
   const inputRefCapacity = useRef(null)
   const [venueAddress, setVenueAddress] = useState([])
   const inputRefAddress = useRef(null)
@@ -15,30 +14,22 @@ function AddVenuePage() {
   const inputRefGeoLocation = useRef(null)
   const [venueOwnerEmail, setVenueOwnerEmail] = useState([])
   const inputRefOwnerEmail = useRef(null)
-  const [venueStartTime, setVenueStartTime] = useState([])
-  const inputRefStartTime = useRef(null)
-  const [venueEndTime, setVenueEndTime] = useState([])
-  const inputRefEndTime = useRef(null)
   const [venueStartDate, setVenueStartDate] = useState([])
   const inputRefStartDate = useRef(null)
   const [venueEndDate, setVenueEndDate] = useState([])
   const inputRefEndDate = useRef(null)
-  */
 
   const PostVenueName = async (e) => {
     console.log(inputRefName)
     const venueBoard = JSON.stringify(
         {   
-            venue: inputRefName.current.value
-            /*capacity: inputRefCapacity.current.value
-            address: inputRefAddress.current.value
-            geolocation: inputRefGeoLocation.current.value
-            email: inputRefOwnerEmail.current.value
-            startTime: inputRefStartTime.current.value
-            endTime: inputRefEndTime.current.value
-            startDate: inputRefStartDate.current.value
+            venue: inputRefName.current.value,
+            capacity: inputRefCapacity.current.value,
+            address: inputRefAddress.current.value,
+            geolocation: inputRefGeoLocation.current.value,
+            email: inputRefOwnerEmail.current.value,
+            startDate: inputRefStartDate.current.value,
             endDate: inputRefEndDate.current.value
-            */
         }
     )
 
@@ -53,25 +44,34 @@ function AddVenuePage() {
     const json = await response.json()
     console.log(json)
     setVenueName(json)
+    setVenueCapacity(json)
+    setVenueAddress(json)
+    setVenueGeoLocation(json)
+    setVenueOwnerEmail(json)
+    setVenueStartDate(json)
+    setVenueEndDate(json)
   }
   
 
   return (
     <div className='add-venue-page'>
-      
+      <div>
       <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
-      {/* <input ref = {inputRefCapacity} type="text" id="venueCapacity" placeholder="venueCapacity"></input> */}
-      {/* <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input> */}
-      {/* <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input> */}
-      {/* <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input> */}
-      {/* <input ref = {inputRefStartTime} type="time" id="venueStartTime" placeholder="venueStartTime"></input> */}
-      {/* <input ref = {inputRefEndTime} type="time" id="venueEndTime" placeholder="venueEndTime"></input> */}
-      {/* <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input> */}
-      {/* <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input> */}
-
+      <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input> 
+      <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
+      <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
+      </div>
+      <div>
+      <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
+      <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
+      <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
+      </div>
       <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
       
-      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}</p>)}</p>
+      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}</p>)}</p>
+      {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
+      <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
+      <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}
       
     </div>
   )
@@ -163,7 +163,7 @@ into the <ul> tag in the homepage component (in homepage.js)
     add availability input field 
     add description input field 
     pull in Booking Status via event ID from Acscent
-
+    stretch goal user review from Actcept to show on venue page
   
   
     const info = JSON.stringify(
