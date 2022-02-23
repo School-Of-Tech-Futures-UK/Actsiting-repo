@@ -38,7 +38,7 @@ Go to line 28 in infrastructure/lib/infrastructure-stack.js and change the IP ad
 
 ```
 
-$ cd infrastructure
+$ cd insfrastructure
 $ npm install
 $ aws-azure-login --profile <profile-type> --mode=gui
 
