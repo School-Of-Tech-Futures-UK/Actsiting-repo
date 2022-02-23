@@ -68,9 +68,9 @@ function AddVenuePage() {
       <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
       <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
       </div>
-      <Link to='/'>
-        <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
-        </Link>
+
+     
+      <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
 
       
       <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}</p>)}</p>
