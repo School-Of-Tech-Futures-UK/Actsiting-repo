@@ -1,6 +1,8 @@
 import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
     
 
 function AddVenuePage() {
@@ -69,7 +71,9 @@ function AddVenuePage() {
       {/* <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input> */}
       {/* <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input> */}
 
-      <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
+      <Link to='/'>
+        <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
+        </Link>
       
       <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}</p>)}</p>
       
