@@ -1,4 +1,4 @@
-# Actciting
+# Welcome to Actciting!
 
 Venue hosting system for home owners to list their venues for events 
 
