@@ -2,14 +2,18 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './venueSummaryPage.css'
-import Venues from './Venues';
+import Venue from './Venue';
+import { useParams } from "react-router-dom";
+import AddVenuePage from './addVenuePage'
 
-const VenueSummaryPage = () => {
 
-let venue = [
-  {name: 'Venue', id:1},
-  {name: 'Venue', id:2},
-  {name: 'Venue', id:3},
+
+function VenueSummaryPage() {
+
+let venues = [
+  {name: 'London', id:1, desc: 'this is a lovely space 1'},
+  {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
+  {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
 ]
 
   return (
@@ -18,21 +22,19 @@ let venue = [
       <Router>
         <h1>I'm the Venue Summary Page</h1>
         {
-          venue.map((venue) =>
+          venues.map((venue) =>
           <div>
-            <Link to={'/venue-summary/'+venue.id + '/' + venue.name}>{venue.name}</Link>
+            <Link to={'/venue-summary/'+venue.id}>{venue.name}</Link>
             </div>)
         }
-        <Route path='/venue-summary/:id/:name'>
-          <Venues />
+        <Route path='/venue-summary/:id'>
+          <Venue venues={venues} />
         </Route>
       </Router>
       <Link to='/'>
           <button>Back to Homepage</button>
         </Link>
     </div>
-  
-
     </>
   )}
 
