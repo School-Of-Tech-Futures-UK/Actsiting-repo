@@ -2,15 +2,37 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './venueSummaryPage.css'
+import Venues from './Venues';
 
 const VenueSummaryPage = () => {
 
+let venue = [
+  {name: 'Venue', id:1},
+  {name: 'Venue', id:2},
+  {name: 'Venue', id:3},
+]
+
   return (
     <>
-      I'm the Venue Summary Page
+    <div className='venue-summary-page-body'>
+      <Router>
+        <h1>I'm the Venue Summary Page</h1>
+        {
+          venue.map((venue) =>
+          <div>
+            <Link to={'/venue-summary/'+venue.id + '/' + venue.name}>{venue.name}</Link>
+            </div>)
+        }
+        <Route path='/venue-summary/:id/:name'>
+          <Venues />
+        </Route>
+      </Router>
       <Link to='/'>
-        <button>Back to Homepage</button>
-      </Link>
+          <button>Back to Homepage</button>
+        </Link>
+    </div>
+  
+
     </>
   )}
 
