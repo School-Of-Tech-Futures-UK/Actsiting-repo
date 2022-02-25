@@ -1,4 +1,4 @@
-name: Docker React CI Frontend
+name: Docker React CI Backend
 on:
   push:
     branches: [ main ]
@@ -15,9 +15,9 @@ jobs:
       working-dir: backend
 
     - name: Build the Docker image
-      run: docker build -t khaashifriaz/gigstr:api3 .
+      run: docker build -t khaashifriaz/api3:v1 .
       working-dir: backend
 
     - name: Push the docker image
-      run: docker push khaashifriaz/gigstr:api3
+      run: docker push khaashifriaz/api3:v1
       working-dir: backend
