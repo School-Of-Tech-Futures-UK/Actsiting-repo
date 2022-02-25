@@ -13,8 +13,8 @@ const dbPassword = process.env.DB_PASSWORD
 
 const db = Postgres({
     host: dbServer,
-    database: 'postgres',
-    user: 'postgres',
+    database: 'gitstr',
+    user: 'gitstr',
     password: dbPassword,
     port: 5432,
 })
@@ -23,7 +23,17 @@ const venueInfo = []
 
 
 server.get('/venue_info/:id', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date FROM Listed_Venues where venue_id=${req.params.id}`)
+    const storeVenue = await db.query(
+        `   SELECT venue_id, 
+            venue_name, 
+            venue_capacity, 
+            venue_address, 
+            venue_geolocation, 
+            venue_owner_email, 
+            venue_start_date, 
+            venue_end_date 
+            FROM Listed_Venues 
+            where venue_id=${req.params.id}`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -33,6 +43,12 @@ server.get('/venue_info', async (req, res) => {
     const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
+})
+
+server.get('/venue_info/:id', async (req, res) => {
+    const storeVenue = await db.query(`SELECT * FROM Listed_Venues`)
+    //res.send(storeVenue)
+     res.json(storeVenue)
 })
 
 // insert user input field data as new info in the database
@@ -49,6 +65,7 @@ server.post('/venue_info', (req, res) => {
     const venue_owner_email = req.body.email 
     const venue_start_date = req.body.startDate 
     const venue_end_date = req.body.endDate 
+
     
     db.query(
         'INSERT INTO listed_venues (venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING venue_id',

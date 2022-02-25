@@ -69,9 +69,9 @@ function AddVenuePage() {
       <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
       </div>
 
-      <Link to='/'>
+      {/* <Link to='/'> */}
         <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
-        </Link>
+        {/* </Link> */}
 
 
       
