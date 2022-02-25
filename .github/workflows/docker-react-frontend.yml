@@ -1,4 +1,4 @@
-name: Docker React CI
+name: Docker React CI Frontend
 
 on:
   push:
@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
     - uses: actions/checkout@v2
     - name: Login to DockerHub
       run: echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-    working-dir: frontend
+      working-dir: frontend
+
     - name: Build the Docker image
       run: docker build -t khaashifriaz/gigstr:react3 .
       working-dir: frontend

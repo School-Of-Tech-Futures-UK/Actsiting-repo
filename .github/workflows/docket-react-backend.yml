@@ -1,4 +1,4 @@
-name: Docker React CI
+name: Docker React CI Frontend
 on:
   push:
     branches: [ main ]
