@@ -17,6 +17,7 @@ jobs:
 
     - name: Build the Docker image
       run: docker build -t khaashifriaz/gigstr:react3 .
+      
 
     - name: Push the docker image
       run: docker push khaashifriaz/gigstr:react3
