@@ -3,7 +3,9 @@ import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-    
+console.log("edmund is a spon")
+   
+
 
 function AddVenuePage() {
   const [venueName, setVenueName] = useState([])
