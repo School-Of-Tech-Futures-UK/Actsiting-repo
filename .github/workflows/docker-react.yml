@@ -14,12 +14,12 @@ jobs:
 
     - name: Login to DockerHub
       run: echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-      working-directory: bigdatabase/docker-database
+      working-directory: bigdatabase
       
     - name: Build the Docker image
-      run: docker build -t khaashifriaz/gigstr:react3 .
-      working-directory: bigdatabase/docker-database 
+      run: docker build -t khaashifriaz/gigstr:team3 .
+      working-directory: bigdatabase
 
     - name: Push the docker image
-      run: docker push khaashifriaz/gigstr:react3
-      working-directory: bigdatabase/docker-database
+      run: docker push khaashifriaz/gigstr:team3
+      working-directory: bigdatabase
