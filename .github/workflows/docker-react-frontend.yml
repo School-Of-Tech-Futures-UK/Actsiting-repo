@@ -15,10 +15,10 @@ jobs:
       working-directory: frontend
 
     - name: Build the Docker image
-      run: docker build -t khaashifriaz/react3v1 .
+      run: docker build -t khaashifriaz/react3:v1 .
       working-directory: frontend
 
     - name: Push the docker image
-      run: docker push khaashifriaz/react3v1
+      run: docker push khaashifriaz/react3:v1
       working-directory: frontend
     
