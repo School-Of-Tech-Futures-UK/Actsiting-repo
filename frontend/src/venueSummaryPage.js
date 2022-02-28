@@ -9,12 +9,17 @@ import AddVenuePage from './addVenuePage'
 
 
 function VenueSummaryPage() {
+    
+    const response = await fetch(process.env.REACT_APP_URI + "/venue_info")
 
-let venues = [
-  {name: 'London', id:1, desc: 'this is a lovely space 1'},
-  {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
-  {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
-]
+    const venues = await response.json()
+
+// let venues = [
+//   {name: 'London', id:1, desc: 'this is a lovely space 1'},
+//   {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
+//   {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
+// ]
+
 
   return (
     <>
@@ -24,7 +29,7 @@ let venues = [
         {
           venues.map((venue) =>
           <div>
-            <Link to={'/venue-summary/'+venue.id}>{venue.name}</Link>
+            <Link to={'/venue-summary/'+venue.venue_id}>{venue.venue_name}</Link>
             </div>)
         }
         <Route path='/venue-summary/:id'>

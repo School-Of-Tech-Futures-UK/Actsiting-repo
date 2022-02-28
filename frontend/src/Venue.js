@@ -11,9 +11,9 @@ const filterVenue = props.venues.filter(v => {
 console.log(filterVenue)
 
   return (
-    <div><h1>{filterVenue.name} {filterVenue.id} Summary</h1>
+    <div><h1>{filterVenue.venue_name} {filterVenue.venue_id} Summary</h1>
     <p>
-    {filterVenue.desc}
+    {filterVenue.venue_owner_email}
     </p>
     </div>
   )

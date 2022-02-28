@@ -45,10 +45,10 @@ server.get('/venue_info', async (req, res) => {
     // res.json(venueInfo)
 })
 
-server.get('/venue_info/:id', async (req, res) => {
-    const storeVenue = await db.query(`SELECT * FROM Listed_Venues`)
-    //res.send(storeVenue)
-     res.json(storeVenue)
+server.get('/venue_info', async (req, res) => {
+    const getVenues = await db.query(`SELECT * FROM Listed_Venues`)    
+    res.send(getVenues)
+    //res.json(storeVenue)
 })
 
 // insert user input field data as new info in the database
