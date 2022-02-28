@@ -8,17 +8,24 @@ import AddVenuePage from './addVenuePage'
 
 
 
-async function VenueSummaryPage() {
+  function VenueSummaryPage() {
     
-    const response = await fetch(process.env.REACT_APP_URI + "/venue_info")
-
-    const venues = await response.json()
+  const [events, setEvents] = useState([])
 
 // let venues = [
 //   {name: 'London', id:1, desc: 'this is a lovely space 1'},
 //   {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
 //   {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
 // ]
+
+useEffect(() => {
+  // Update the document title using the browser API
+    fetch(process.env.REACT_APP_URI + "/venue_info")
+    .then(response => response.json())
+    .then(json => setEvents(json))
+
+    
+}, [events]);
 
 
   return (
