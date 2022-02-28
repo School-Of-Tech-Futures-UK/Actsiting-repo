@@ -27,18 +27,24 @@ useEffect(() => {
     
 }, [venues]);
 
+console.log(venues)
+
+const venue = venues.filter(v => {
+  return v.venue_id == props.match.params.id
+})[0]
 
   return (
     <>
     <div className='venue-summary-page-body'>
       <Router>
-        <h1>I'm the Venue Summary Page</h1>
-        {
-          venues.map((venue) =>
-          <div>
-            <Link to={'/venue-summary/'+venue.venue_id}>{venue.venue_name}</Link>
-            </div>)
-        }
+        <h1>I'm the Venue Summary Page</h1>  
+          <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
+          
+        {/* /* <div>
+          //   <Link to={'/venue-summary/'+venue.venue_id}>{venue.venue_name}</Link>
+            </div>) */ */}
+
+
         {/* <Route path='/venue-summary/:id'>
           <Venue venues={venues} />
         </Route> */}
