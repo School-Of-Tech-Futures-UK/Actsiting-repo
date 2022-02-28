@@ -67,14 +67,21 @@ server.post('/venue_info', (req, res) => {
     const venue_end_date = req.body.endDate 
 
     
-    db.query(
+    try {
+        db.query(
         'INSERT INTO listed_venues (venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING venue_id',
-        [venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date]
-    )
+        [venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date]      
+        )
+        res.status(200)
+        return res.send('ok')
+    }
+
+
+    catch (error) {
+        res.status(503)
+        return res.send(error)
+    }
     //venueInfo.push(req.body)
-    console.log(req.body)
-    res.status(200)
-    return res.send('ok')
 })
 
 
