@@ -8,7 +8,7 @@ import AddVenuePage from './addVenuePage'
 
 
 
-function VenueSummaryPage() {
+async function VenueSummaryPage() {
     
     const response = await fetch(process.env.REACT_APP_URI + "/venue_info")
 
