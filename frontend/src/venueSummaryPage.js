@@ -8,7 +8,7 @@ import AddVenuePage from './addVenuePage'
 
 
 
-  function VenueSummaryPage() {
+  function VenueSummaryPage(props) {
     
   const [venues, setVenues] = useState([])
 
@@ -39,15 +39,7 @@ const venue = venues.filter(v => {
       <Router>
         <h1>I'm the Venue Summary Page</h1>  
           <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
-          
-        {/* /* <div>
-          //   <Link to={'/venue-summary/'+venue.venue_id}>{venue.venue_name}</Link>
-            </div>) */ */}
 
-
-        {/* <Route path='/venue-summary/:id'>
-          <Venue venues={venues} />
-        </Route> */}
       </Router>
       <Link to='/'>
           <button>Back to Homepage</button>
