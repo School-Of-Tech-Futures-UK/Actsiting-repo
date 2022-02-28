@@ -1,16 +1,40 @@
 import React from 'react'
-
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import styles from "./venueSummaryPage.css";
-import { RiCloseLine } from "react-icons/ri";
-import ReactDom from 'react-dom';
+import './venueSummaryPage.css'
+import Venue from './Venue';
+import { useParams } from "react-router-dom";
+import AddVenuePage from './addVenuePage'
 
 
-const VenueSummaryPage = () => {
+
+function VenueSummaryPage() {
+
+let venues = [
+  {name: 'London', id:1, desc: 'this is a lovely space 1'},
+  {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
+  {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
+]
+
   return (
     <>
-      <div>Hello World</div>
+    <div className='venue-summary-page-body'>
+      <Router>
+        <h1>I'm the Venue Summary Page</h1>
+        {
+          venues.map((venue) =>
+          <div>
+            <Link to={'/venue-summary/'+venue.id}>{venue.name}</Link>
+            </div>)
+        }
+        <Route path='/venue-summary/:id'>
+          <Venue venues={venues} />
+        </Route>
+      </Router>
+      <Link to='/'>
+          <button>Back to Homepage</button>
+        </Link>
+    </div>
     </>
   )}
 

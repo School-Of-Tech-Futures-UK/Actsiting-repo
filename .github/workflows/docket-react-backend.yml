@@ -1,0 +1,23 @@
+name: Docker React CI Backend
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login to DockerHub
+      run: echo ${{ secrets.DOCKER_PASS }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+      working-directory: backend
+
+    - name: Build the Docker image
+      run: docker build -t khaashifriaz/api3:v1 .
+      working-directory: backend
+
+    - name: Push the docker image
+      run: docker push khaashifriaz/api3:v1
+      working-directory: backend

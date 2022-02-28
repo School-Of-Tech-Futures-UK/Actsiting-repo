@@ -3,7 +3,6 @@
     height: 70vh;
     background-size: cover;
     position: relative;
-    
 }
 
 .banner-info {
@@ -26,4 +25,5 @@
 .banner-info-button:hover {
     background-color: white;
     color: #ff7779;
+
 }

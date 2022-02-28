@@ -22,17 +22,10 @@ services:
       - DB_HOSTNAME=gigstr-db-container
       - DB_PASSWORD=gigstr
 
-  # database:
-  #   image: postgres:latest
-  #   container_name: "database_container"
-  #   environment:
-  #     - POSTGRES_PASSWORD=mysecretpassword
-  #   ports:
-  #     - 5432:5432
 
   database:
-    image: khaashifriaz/gigstr:gigtag
-    container_name: gigstr-db-container
+    image: khaashifriaz/gigstr:gigtag   
+    container_name: "gigstr-db-container"
     environment:
       - POSTGRES_PASSWORD=gigstr
     ports:
