@@ -13,8 +13,8 @@ const dbPassword = process.env.DB_PASSWORD
 
 const db = Postgres({
     host: dbServer,
-    database: 'gitstr',
-    user: 'gitstr',
+    database: 'gigstr',
+    user: 'gigstr',
     password: dbPassword,
     port: 5432,
 })
