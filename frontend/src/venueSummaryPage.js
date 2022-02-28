@@ -10,7 +10,7 @@ import AddVenuePage from './addVenuePage'
 
   function VenueSummaryPage() {
     
-  const [events, setEvents] = useState([])
+  const [venues, setVenues] = useState([])
 
 // let venues = [
 //   {name: 'London', id:1, desc: 'this is a lovely space 1'},
@@ -22,10 +22,10 @@ useEffect(() => {
   // Update the document title using the browser API
     fetch(process.env.REACT_APP_URI + "/venue_info")
     .then(response => response.json())
-    .then(json => setEvents(json))
+    .then(json => setVenues(json))
 
     
-}, [events]);
+}, [venues]);
 
 
   return (
