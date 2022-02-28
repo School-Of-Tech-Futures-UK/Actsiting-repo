@@ -36,7 +36,7 @@ useEffect(() => {
       <Banner />
         <div className='homepage-venue-card-container'>
           <div className='homepage-venue-card'>
-          {venues.map(place => <VenueCard src={place.venue_photo} venueName={place.venue_name} venueAddress={place.venue_address} />)}
+          {venues.map(place => <VenueCard venueId={place.venue_id} src={place.venue_photo} venueName={place.venue_name} venueAddress={place.venue_address} />)}
             </div>
         </div>
     </div>

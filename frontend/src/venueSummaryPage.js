@@ -39,9 +39,9 @@ useEffect(() => {
             <Link to={'/venue-summary/'+venue.venue_id}>{venue.venue_name}</Link>
             </div>)
         }
-        <Route path='/venue-summary/:id'>
+        {/* <Route path='/venue-summary/:id'>
           <Venue venues={venues} />
-        </Route>
+        </Route> */}
       </Router>
       <Link to='/'>
           <button>Back to Homepage</button>

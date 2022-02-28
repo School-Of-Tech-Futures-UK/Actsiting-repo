@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 
 
-function VenueCard({src, venueName, venueAddress}) {
+function VenueCard({src, venueName, venueAddress, venueId}) {
   
   // const linkStyle = {
   //   padding: "1rem",
@@ -26,7 +26,7 @@ function VenueCard({src, venueName, venueAddress}) {
       <div className='venue-card-item-info'>
         <h2>{venueName}</h2>
         <h4>{venueAddress}</h4>
-        <Link to='/venue-summary'>
+        <Link to={'/venue-summary/' + venueId}>
         {/* to add inside 1st Link tag >>> style={linkStyle} */}
           <button>Open Venue Summary</button>
         </Link>
