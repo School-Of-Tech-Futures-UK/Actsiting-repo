@@ -2,6 +2,7 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Map from './map.js'
 
 console.log("edmund is a spoon")
    
@@ -59,21 +60,43 @@ function AddVenuePage() {
 
   return (
     <div className='add-venue-page'>
-      <div>
-      <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
-      <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input> 
-      <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
-      <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
+      
+      <form>
+      <div class="form-group">
+        <label for="venueName">Give your venue a name  </label>
+        <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
       </div>
       <div>
-      <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
-      <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
-      <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
+        <label for="venueCapacity">What is your venue capacity?  </label>
+        <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input>
+      </div> 
+      <div>
+        <label for="venueAddress">Enter venue address  </label>
+        <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
+      </div> 
+      <div>
+        <label for="venueGeoLocation">Enter Geolocation  </label>
+        <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
+      <div>
+        <label for="venueOwnerEmail">Enter your email  </label>
+        <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
+      </div>
+      <div>
+        <label for="venueStartDate">When will your venue be available from?  </label>
+        <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
+      </div>
+      <div>
+        <label for="venueEndDate">When will your venue be available to?  </label>
+        <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+     </form>
 
-      {/* <Link to='/'> */}
+     <div><Map /></div>
+
+      <div>
         <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
-        {/* </Link> */}
+      </div>
+      
 
 
       
