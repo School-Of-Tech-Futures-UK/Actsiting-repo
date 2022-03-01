@@ -10,7 +10,7 @@ function Banner() {
             <h1>Welcome [user]</h1>
             <h3>It's time to get 'Actcited'... with venue hosting made easy!</h3>
             <Link to='/add-venue' className='banner-info-button'>
-              <Button variant='outlined'>
+              <Button variant='outlined' id='add-venue-button'>
                   Add New Venue
               </Button>
               </Link>

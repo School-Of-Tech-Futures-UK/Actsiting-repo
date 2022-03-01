@@ -21,10 +21,18 @@ const venue = props.venues.filter(v => {
   return (
     <>
     <div className='venue-summary-page-body'>
-        <h1>I'm the Venue Summary Page</h1>  
-          <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
+          <h1>Venue Summary Page</h1>  
+          <div><strong>Venue ID</strong>:  {venue.venue_id}</div>  
+          <div><strong>Venue Name</strong>:  {venue.venue_name}</div> 
+          <div><strong>Venue Capacity</strong>: {venue.venue_capacity}</div>  
+          <div><strong>Venue Address</strong>: {venue.venue_address}</div>  
+          <div><strong>Venue Geolocation</strong>:  {venue.venue_geolocation}</div>  
+          <div><strong>Email</strong>:  {venue.venue_owner_email}</div>  
+          <div><strong>Venue Start Date</strong>:  {venue.venue_start_date} </div> 
+          <div><strong>Venue End Date</strong>:  {venue.venue_end_date}</div>
+          <br></br>
       <Link to='/'>
-          <button>Back to Homepage</button>
+          <button id="homepage-button">Back to Homepage</button>
         </Link>
     </div>
     </>

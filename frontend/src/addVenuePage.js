@@ -2,7 +2,7 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Map from './map.js'
+
 
 console.log("edmund is a spoon")
    
@@ -91,7 +91,7 @@ function AddVenuePage() {
         <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
      </form>
 
-     <div><Map /></div>
+     
 
       <div>
         <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
