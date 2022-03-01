@@ -88,11 +88,14 @@ function AddVenuePage() {
         <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
       <div>
-<<<<<<< HEAD
+      <label for="venueImage">Give your venue an image  </label>
       <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
+      </div>
+      <div>
+      <label for="venueDescription">Give your venue a description  </label>
       <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
       </div>
-=======
+      <div>
         <label for="venueOwnerEmail">Enter your email  </label>
         <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
       </div>
@@ -104,7 +107,6 @@ function AddVenuePage() {
         <label for="venueEndDate">When will your venue be available to?  </label>
         <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
      </form>
->>>>>>> 07d66a9435ba01cb3bc7a5715c965a3b0b0d8a52
 
      <div><Map /></div>
 
