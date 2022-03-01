@@ -2,25 +2,23 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './venueSummaryPage.css'
-import Venue from './Venue';
 import { useParams } from "react-router-dom";
-import AddVenuePage from './addVenuePage'
-
 
 
   function VenueSummaryPage(props) {
 
+    console.log(props)
+
     const { id } = useParams()
 
-console.log(id)
-
-const venue = props.venues.filter(v => {
-  return v.venue_id == id
-})[0]
+    const venue = props.venues.filter(v => {
+      return v.venue_id == id
+    })[0]
 
   return (
     <>
     <div className='venue-summary-page-body'>
+<<<<<<< HEAD
           <h1>Venue Summary Page</h1>  
           <div><strong>Venue ID</strong>:  {venue.venue_id}</div>  
           <div><strong>Venue Name</strong>:  {venue.venue_name}</div> 
@@ -31,6 +29,14 @@ const venue = props.venues.filter(v => {
           <div><strong>Venue Start Date</strong>:  {venue.venue_start_date} </div> 
           <div><strong>Venue End Date</strong>:  {venue.venue_end_date}</div>
           <br></br>
+=======
+        <h1>I'm the Venue Summary Page</h1> 
+        <h2>Venue: {venue.venue_name} Info </h2> 
+          <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
+          
+          <h2>Event Info for Venue: {venue.venue_name}</h2>
+          {/* <p>{events.venue_id} , {events.event_id} , {events.date} , {events.event_name} , {events.status}</p> */}
+>>>>>>> d70d5bb3fa0f02a46539e86ac49987174b9cf6a9
       <Link to='/'>
           <button id="homepage-button">Back to Homepage</button>
         </Link>
@@ -45,70 +51,4 @@ export default VenueSummaryPage;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// THIS IS THE MODAL
-
-
-
-// <>
-
-// {/* <div class="container" >
-//       <div className="modal">
-//         <h2>This is a Modal</h2>
-//         <button onClick={() => setIsOpen(false)}>X</button>
-//       </div>
-//     </div>,
-//  */}
-
-//  {/* TESTING BOOTSTRAP MODAL BELOW */}
-
-//  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-//   <div class="modal-dialog">
-//     <div class="modal-content">
-//       <div class="modal-header">
-//         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-//         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//       </div>
-//       <div class="modal-body">
-//         ...
-//       </div>
-//       <div class="modal-footer">
-//         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-//         <button type="button" class="btn btn-primary">Save changes</button>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-     
-//     </>
-    
-//   )};
+// {"event_id":1,"venue_id":1,"date":"2022-03-05T00:00:00.000Z","event_name":"Andre Ice Cold","event_description":"Outkast Show","event_image":"https://numero.twic.pics/images/article/homepage/full/push-cover-andre3000-numero-magazine.jpg?twic=v1/cover=16:10/resize=1900","artist_name":"Outkast","artist_email":"outkast@gigstr.com","genre":"Hip Hop","status":"confirmed"}

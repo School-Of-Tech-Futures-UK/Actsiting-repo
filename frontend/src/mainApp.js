@@ -15,18 +15,27 @@ import {useState, useEffect} from 'react'
 function MainApp() {
 
     const [venues, setVenues] = useState([])
+    const [showEvents, setShowEvents] = useState([])
+
     
     useEffect(() => {
-      // Update the document title using the browser API
+        // fetch the venues API and update showEvent state
         fetch(process.env.REACT_APP_URI + "/venue_info")
         .then(response => response.json())
         .then(json => setVenues(json))
         .catch(console.log())
-    
-        
     }, []);
 
+    useEffect(() => {
+        // fetch the events API and update showEvent state
+          fetch("http://localhost:3002/events")
+          .then(response => response.json())
+          .then(json => setVenues(json))
+          .catch(console.log())
+      }, []);
+
 console.log(venues)
+console.log(showEvents)
 
     return (
         <>
@@ -40,7 +49,7 @@ console.log(venues)
                 </Route>
 
                 <Route path="/venue-summary/:id">
-                    <VenueSummaryPage venues={venues} />
+                    <VenueSummaryPage venues={venues} showEvents={showEvents} />
                 </Route>
 
                 <Route path="/">

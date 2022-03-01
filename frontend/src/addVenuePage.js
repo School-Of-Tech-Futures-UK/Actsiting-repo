@@ -23,6 +23,11 @@ function AddVenuePage() {
   const inputRefStartDate = useRef(null)
   const [venueEndDate, setVenueEndDate] = useState([])
   const inputRefEndDate = useRef(null)
+  const [venueImage, setVenueImage] = useState([])
+  const inputRefImage = useRef(null)
+  const [venueDescription, setVenueDescription] = useState([])
+  const inputRefDescription = useRef(null) 
+
 
   const PostVenueName = async (e) => {
     console.log(inputRefName)
@@ -34,7 +39,9 @@ function AddVenuePage() {
             geolocation: inputRefGeoLocation.current.value,
             email: inputRefOwnerEmail.current.value,
             startDate: inputRefStartDate.current.value,
-            endDate: inputRefEndDate.current.value
+            endDate: inputRefEndDate.current.value,
+            image: inputRefImage.current.value,
+            description: inputRefDescription.current.value
         }
     )
 
@@ -55,6 +62,8 @@ function AddVenuePage() {
     setVenueOwnerEmail(json)
     setVenueStartDate(json)
     setVenueEndDate(json)
+    setVenueImage(json) //set venue image as json for now?
+    setVenueDescription(json)
   }
   
 
@@ -79,6 +88,11 @@ function AddVenuePage() {
         <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
       <div>
+<<<<<<< HEAD
+      <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
+      <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
+      </div>
+=======
         <label for="venueOwnerEmail">Enter your email  </label>
         <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
       </div>
@@ -90,6 +104,7 @@ function AddVenuePage() {
         <label for="venueEndDate">When will your venue be available to?  </label>
         <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
      </form>
+>>>>>>> 07d66a9435ba01cb3bc7a5715c965a3b0b0d8a52
 
      
 
@@ -102,11 +117,11 @@ function AddVenuePage() {
       
 
       
-      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}</p>)}</p>
+      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image}, {place.venue.description}</p>)}</p>
       {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
       <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
       <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}
-      
+
     </div>
   )
 }
