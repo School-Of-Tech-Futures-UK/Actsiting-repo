@@ -9,26 +9,8 @@ import VenueSummaryPage from './venueSummaryPage'
 import { useState, useEffect } from 'react'
 
 
-function Homepage() {
-      
-  const [venues, setVenues] = useState([])
-
-// let venues = [
-//   {name: 'London', id:1, desc: 'this is a lovely space 1'},
-//   {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
-//   {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
-// ]
-
-useEffect(() => {
-  // Update the document title using the browser API
-    fetch(process.env.REACT_APP_URI + "/venue_info")
-    .then(response => response.json())
-    .then(json => setVenues(json))
-    .catch(console.log())
-
-    
-}, [venues]);
-
+function Homepage(props) {
+  
 
   return (
     <>
@@ -36,7 +18,7 @@ useEffect(() => {
       <Banner />
         <div className='homepage-venue-card-container'>
           <div className='homepage-venue-card'>
-          {venues.map(place => <VenueCard venueId={place.venue_id} src={place.venue_photo} venueName={place.venue_name} venueAddress={place.venue_address} />)}
+          {props.venues.map(place => <VenueCard venueId={place.venue_id} src={place.venue_photo} venueName={place.venue_name} venueAddress={place.venue_address} />)}
             </div>
         </div>
     </div>

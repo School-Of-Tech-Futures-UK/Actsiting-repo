@@ -1,0 +1,24 @@
+version: "3" 
+services:
+
+  server:
+    build: ./backend
+    container_name: "api_server"   
+    ports:
+      - 3003:3000
+    depends_on:
+      - database
+    environment:
+      - DB_HOSTNAME=gigstr-db-container
+      - DB_PASSWORD=gigstr
+
+
+  database:
+    image: khaashifriaz/gigstr:gigtag   
+    container_name: "gigstr-db-container"
+    environment:
+      - POSTGRES_PASSWORD=gigstr
+    ports:
+      - 5432:5432
+
+  

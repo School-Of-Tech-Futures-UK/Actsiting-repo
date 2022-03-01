@@ -9,38 +9,20 @@ import AddVenuePage from './addVenuePage'
 
 
   function VenueSummaryPage(props) {
-    
-  const [venues, setVenues] = useState([])
 
-// let venues = [
-//   {name: 'London', id:1, desc: 'this is a lovely space 1'},
-//   {name: 'Manchester', id:2, desc: 'this is a lovely space 2'},
-//   {name: 'Newcastle', id:3, desc: 'this is a lovely space 3'},
-// ]
+    const { id } = useParams()
 
-useEffect(() => {
-  // Update the document title using the browser API
-    fetch(process.env.REACT_APP_URI + "/venue_info")
-    .then(response => response.json())
-    .then(json => setVenues(json))
+console.log(id)
 
-    
-}, [venues]);
-
-console.log(venues)
-
-const venue = venues.filter(v => {
-  return v.venue_id == props.match.params.id
+const venue = props.venues.filter(v => {
+  return v.venue_id == id
 })[0]
 
   return (
     <>
     <div className='venue-summary-page-body'>
-      <Router>
         <h1>I'm the Venue Summary Page</h1>  
           <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
-
-      </Router>
       <Link to='/'>
           <button>Back to Homepage</button>
         </Link>
