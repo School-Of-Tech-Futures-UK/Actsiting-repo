@@ -87,13 +87,14 @@ function AddVenuePage() {
         <label for="venueGeoLocation">Enter Geolocation  </label>
         <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
-      
-      {/* <div>
-
+      <div>
+      <label for="venueImage">Give your venue an image  </label>
       <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
+      </div>
+      <div>
+      <label for="venueDescription">Give your venue a description  </label>
       <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
-      </div> */}
-      
+      </div>
       <div>
         <label for="venueOwnerEmail">Enter your email  </label>
         <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
