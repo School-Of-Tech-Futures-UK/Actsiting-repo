@@ -18,7 +18,6 @@ import { useParams } from "react-router-dom";
   return (
     <>
     <div className='venue-summary-page-body'>
-<<<<<<< HEAD
           <h1>Venue Summary Page</h1>  
           <div><strong>Venue ID</strong>:  {venue.venue_id}</div>  
           <div><strong>Venue Name</strong>:  {venue.venue_name}</div> 
@@ -29,14 +28,6 @@ import { useParams } from "react-router-dom";
           <div><strong>Venue Start Date</strong>:  {venue.venue_start_date} </div> 
           <div><strong>Venue End Date</strong>:  {venue.venue_end_date}</div>
           <br></br>
-=======
-        <h1>I'm the Venue Summary Page</h1> 
-        <h2>Venue: {venue.venue_name} Info </h2> 
-          <p>{venue.venue_id} , {venue.venue_name}, {venue.venue_capacity} , {venue.venue_address} , {venue.venue_geolocation} , {venue.venue_owner_email} , {venue.venue_start_date} , {venue.venue_end_date}</p>
-          
-          <h2>Event Info for Venue: {venue.venue_name}</h2>
-          {/* <p>{events.venue_id} , {events.event_id} , {events.date} , {events.event_name} , {events.status}</p> */}
->>>>>>> d70d5bb3fa0f02a46539e86ac49987174b9cf6a9
       <Link to='/'>
           <button id="homepage-button">Back to Homepage</button>
         </Link>
