@@ -22,6 +22,8 @@ function AddVenuePage() {
   const inputRefStartDate = useRef(null)
   const [venueEndDate, setVenueEndDate] = useState([])
   const inputRefEndDate = useRef(null)
+  const [venueImage, setVenueImage] = useState([])
+  const inputRefImage = useRef(null)
 
   const PostVenueName = async (e) => {
     console.log(inputRefName)
@@ -33,7 +35,8 @@ function AddVenuePage() {
             geolocation: inputRefGeoLocation.current.value,
             email: inputRefOwnerEmail.current.value,
             startDate: inputRefStartDate.current.value,
-            endDate: inputRefEndDate.current.value
+            endDate: inputRefEndDate.current.value,
+            venueImage: inputRefImage.current.value
         }
     )
 
@@ -54,6 +57,7 @@ function AddVenuePage() {
     setVenueOwnerEmail(json)
     setVenueStartDate(json)
     setVenueEndDate(json)
+    setVenueImage(json)
   }
   
 
@@ -70,6 +74,10 @@ function AddVenuePage() {
       <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
       <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
       </div>
+      <div>
+      <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
+      </div>
+
 
       {/* <Link to='/'> */}
         <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
@@ -79,7 +87,7 @@ function AddVenuePage() {
       
 
       
-      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}</p>)}</p>
+      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image} </p>)}</p>
       {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
       <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
       <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}

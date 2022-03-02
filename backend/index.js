@@ -32,6 +32,7 @@ server.get('/venue_info/:id', async (req, res) => {
             venue_owner_email, 
             venue_start_date, 
             venue_end_date 
+            venue_image
             FROM Listed_Venues 
             where venue_id=${req.params.id}`)
     res.send(storeVenue)
@@ -40,7 +41,7 @@ server.get('/venue_info/:id', async (req, res) => {
 
 
 server.get('/venue_info', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date FROM Listed_Venues`)
+    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date, venue_image FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -65,7 +66,7 @@ server.post('/venue_info', (req, res) => {
     const venue_owner_email = req.body.email 
     const venue_start_date = req.body.startDate 
     const venue_end_date = req.body.endDate 
-
+    const venue_image = req.body.image
     
     try {
         db.query(
