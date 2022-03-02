@@ -27,15 +27,15 @@ function MainApp() {
     }, []);
 
     useEffect(() => {
-        // fetch the events API and update showEvent state
+        // fetch the events API and update showEvent state       
           fetch("http://localhost:3002/events")
           .then(response => response.json())
-          .then(json => setVenues(json))
+          .then(json => setShowEvents(json))
           .catch(console.log())
       }, []);
 
-console.log(venues)
-console.log(showEvents)
+console.log('value of venues', venues)
+console.log('value of events', showEvents)
 
     return (
         <>
@@ -53,7 +53,7 @@ console.log(showEvents)
                 </Route>
 
                 <Route path="/">
-                    <Homepage venues={venues} />
+                    <Homepage venues={venues} showEvents={showEvents} />
                 </Route>
 
             </Switch>
