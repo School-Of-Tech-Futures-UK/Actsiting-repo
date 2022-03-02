@@ -10,7 +10,7 @@ function Header() {
           <Link to='/'>
             <img
               className='header-icon'
-              src='https://cdn2.iconfinder.com/data/icons/location-map-simplicity/512/music_concert_hall-512.png'
+              src="https://www.pngkey.com/png/detail/30-304356_apple-logo-transparent-background-cool-apple-logo-png.png"
               alt='An icon of a location pointer'
           />
           </Link>
@@ -21,7 +21,7 @@ function Header() {
         </div>
 
         <div className='header-right-icons'>
-          <p>Login</p>
+          
           <Avatar />
         </div>
 

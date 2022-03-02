@@ -3,6 +3,7 @@ import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+
 console.log("edmund is a spoon")
    
 
@@ -63,35 +64,63 @@ function AddVenuePage() {
 
   return (
     <div className='add-venue-page'>
-      <div>
-      <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
-      <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input> 
-      <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
-      <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
+      
+      <form>
+      <div class="form-group">
+        <label for="venueName">Give your venue a name  </label>
+        <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
       </div>
       <div>
-      <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
-      <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
-      <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input>
+        <label for="venueCapacity">What is your venue capacity?  </label>
+        <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input>
+      </div> 
+      <div>
+        <label for="venueAddress">Enter venue address  </label>
+        <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
+      </div> 
+      <div>
+        <label for="venueGeoLocation">Enter Geolocation  </label>
+        <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
       <div>
+      <label for="venueImage">Please provide an image URL of your venue  </label>
       <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
       </div>
+      {/* <div>
+      <label for="venueDescription">Give your venue a description  </label>
+      <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
+      </div> */}
+      <div>
+        <label for="venueOwnerEmail">Enter your email  </label>
+        <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
+      </div>
+      <div>
+        <label for="venueStartDate">When will your venue be available from?  </label>
+        <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
+      </div>
+      <div>
+        <label for="venueEndDate">When will your venue be available to?  </label>
+        <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+     </form>
 
 
-      {/* <Link to='/'> */}
-        <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
-        {/* </Link> */}
+      <div className='button-container'>
+          <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
+          <Link to='/'>
+          <button className='button-area-item' id="back-to-home">Back to Homepage</button>
+          </Link>
+      </div>
+      
 
 
       
 
       
-      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image} </p>)}</p>
+      {/* <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image} </p>)}</p> */}
       {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
       <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
       <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}
-      
+
     </div>
   )
 }

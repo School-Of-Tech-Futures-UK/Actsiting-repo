@@ -31,8 +31,8 @@ server.get('/venue_info/:id', async (req, res) => {
             venue_geolocation, 
             venue_owner_email, 
             venue_start_date, 
-            venue_end_date 
-            venue_image
+            venue_end_date, 
+            venue_image,
             FROM Listed_Venues 
             where venue_id=${req.params.id}`)
     res.send(storeVenue)
@@ -41,7 +41,17 @@ server.get('/venue_info/:id', async (req, res) => {
 
 
 server.get('/venue_info', async (req, res) => {
-    const storeVenue = await db.query(`SELECT venue_id, venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date, venue_image FROM Listed_Venues`)
+    const storeVenue = await db.query(
+        `SELECT venue_id, 
+        venue_name, 
+        venue_capacity, 
+        venue_address, 
+        venue_geolocation, 
+        venue_owner_email, 
+        venue_start_date, 
+        venue_end_date, 
+        venue_image 
+        FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -66,19 +76,19 @@ server.post('/venue_info', (req, res) => {
     const venue_owner_email = req.body.email 
     const venue_start_date = req.body.startDate 
     const venue_end_date = req.body.endDate 
-    const venue_image = req.body.image
+    const venue_image = req.body.venueImage
     
     try {
         db.query(
-        'INSERT INTO listed_venues (venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING venue_id',
-        [venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date]      
+        'INSERT INTO Listed_Venues (venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date, venue_image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING venue_id',
+        [venue_name, venue_capacity, venue_address, venue_geolocation, venue_owner_email, venue_start_date, venue_end_date, venue_image]      
         )
         res.status(200)
         return res.send('ok')
     }
 
 
-    catch (error) {
+    catch (error) { 
         res.status(503)
         return res.send(error)
     }

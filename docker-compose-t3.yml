@@ -12,7 +12,6 @@ services:
       - DB_HOSTNAME=gigstr-db-container
       - DB_PASSWORD=gigstr
 
-
   database:
     image: khaashifriaz/gigstr:gigtag   
     container_name: "gigstr-db-container"
@@ -21,4 +20,10 @@ services:
     ports:
       - 5432:5432
 
-  
+  api3:
+    image: khaashifriaz/api2:v1
+    container_name: api2
+    environment:
+        - DB_HOSTNAME=gigstr-db-container
+    ports:
+      - 3002:3000
