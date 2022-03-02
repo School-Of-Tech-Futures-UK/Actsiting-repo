@@ -7,7 +7,40 @@ import { useParams } from "react-router-dom";
 
   function VenueSummaryPage(props) {
 
-    console.log(props)
+    const [accept, setAccept] = useState(false)
+    const [decline, setDecline] = useState(true)
+
+    const acceptEventRequest = async (id) => {
+      const confirmEvent = JSON.stringify(
+        {
+          id: id, 
+          status: 'confirmed',
+        }
+      )
+
+        await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
+          headers:{ 'Content-Type': 'application/json'},
+          method: 'PUT',
+          body: confirmEvent
+      })
+
+    }
+
+    const declineEventRequest = async (e) => {
+      const declineEvent = JSON.stringify(
+        {
+          id: id, 
+          status: 'declined',
+        }
+      )
+
+        await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
+          headers:{ 'Content-Type': 'application/json'},
+          method: 'PUT',
+          body: declineEvent
+      })
+
+    }
 
     const { id } = useParams()
 
@@ -15,27 +48,8 @@ import { useParams } from "react-router-dom";
       return v.venue_id == id})[0]
 
     const events = props.showEvents.filter(e => {
-      return e.venue_id == venue.venue_id
+      return e.venue_id === venue.venue_id
     });
-    console.log(events)
-
-    // let itemNames = nestedObject.filter(
-    //   eachObj => eachObj.itemDetails.price === 1500);
-
-
-    // let eventsArray = []
-    // for (let i = 0; i < venue.length; i++) {
-    //   for (let j = 0; j < events.length; j++) {
-    //     if (events.venue_id === venue.venue_id) {
-    //         eventsArray.push(events.venue_id)
-    //     } else {
-    //      return null
-    //     }        
-    //   } 
-    // }
-
-    // console.log(eventsArray)
-
 
   return (
     <>
@@ -52,7 +66,7 @@ import { useParams } from "react-router-dom";
           <br></br>
 
           <h1>Events for this Venue</h1>  
-      <p>{events.map(event => <p>{event.venue_id} , {event.event_id}, {event.date} , {event.status}</p>)}</p>
+      <div>{events.map(event => <p><strong>Venue ID:</strong> {event.venue_id} , <strong>Event ID:</strong> {event.event_id}, <strong>Event Date:</strong> {event.date} , <strong>Event Booking Status:</strong> {event.status} <button onClick={()=> acceptEventRequest(event.event_id)}>Accept</button><button onClick={() => declineEventRequest(event.event_id)}>Decline</button></p>)}</div>
 
 
       <Link to='/'>
