@@ -12,8 +12,30 @@ import { useParams } from "react-router-dom";
     const { id } = useParams()
 
     const venue = props.venues.filter(v => {
-      return v.venue_id == id
-    })[0]
+      return v.venue_id == id})[0]
+
+    const events = props.showEvents.filter(e => {
+      return e.venue_id == venue.venue_id
+    });
+    console.log(events)
+
+    // let itemNames = nestedObject.filter(
+    //   eachObj => eachObj.itemDetails.price === 1500);
+
+
+    // let eventsArray = []
+    // for (let i = 0; i < venue.length; i++) {
+    //   for (let j = 0; j < events.length; j++) {
+    //     if (events.venue_id === venue.venue_id) {
+    //         eventsArray.push(events.venue_id)
+    //     } else {
+    //      return null
+    //     }        
+    //   } 
+    // }
+
+    // console.log(eventsArray)
+
 
   return (
     <>
@@ -28,6 +50,11 @@ import { useParams } from "react-router-dom";
           <div><strong>Venue Start Date</strong>:  {venue.venue_start_date} </div> 
           <div><strong>Venue End Date</strong>:  {venue.venue_end_date}</div>
           <br></br>
+
+          <h1>Events for this Venue</h1>  
+      <p>{events.map(event => <p>{event.venue_id} , {event.event_id}, {event.date} , {event.status}</p>)}</p>
+
+
       <Link to='/'>
           <button id="homepage-button">Back to Homepage</button>
         </Link>
