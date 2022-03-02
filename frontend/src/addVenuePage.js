@@ -70,6 +70,8 @@ function AddVenuePage() {
   return (
     <div className='add-venue-page'>
       
+      <h1>Add a new Venue</h1>
+
       <form>
       <div class="form-group">
         <label for="venueName">Give your venue a name  </label>
@@ -111,8 +113,11 @@ function AddVenuePage() {
 
      
 
-      <div>
-        <button id="submit" onClick={PostVenueName}>SUBMIT</button> 
+      <div className='button-container'>
+          <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
+          <Link to='/'>
+          <button className='button-area-item' id="back-to-home">Back to Homepage</button>
+          </Link>
       </div>
       
 
@@ -120,7 +125,7 @@ function AddVenuePage() {
       
 
       
-      <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image}, {place.venue.description}</p>)}</p>
+      {/* <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image}, {place.venue.description}</p>)}</p>
       {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
       <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
       <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}
