@@ -25,9 +25,6 @@ function AddVenuePage() {
   const inputRefEndDate = useRef(null)
   const [venueImage, setVenueImage] = useState([])
   const inputRefImage = useRef(null)
-  const [venueDescription, setVenueDescription] = useState([])
-  const inputRefDescription = useRef(null) 
-
 
   const PostVenueName = async (e) => {
     console.log(inputRefName)
@@ -40,8 +37,7 @@ function AddVenuePage() {
             email: inputRefOwnerEmail.current.value,
             startDate: inputRefStartDate.current.value,
             endDate: inputRefEndDate.current.value,
-            image: inputRefImage.current.value,
-            description: inputRefDescription.current.value
+            venueImage: inputRefImage.current.value
         }
     )
 
@@ -62,16 +58,13 @@ function AddVenuePage() {
     setVenueOwnerEmail(json)
     setVenueStartDate(json)
     setVenueEndDate(json)
-    setVenueImage(json) //set venue image as json for now?
-    setVenueDescription(json)
+    setVenueImage(json)
   }
   
 
   return (
     <div className='add-venue-page'>
       
-      <h1>Add a new Venue</h1>
-
       <form>
       <div class="form-group">
         <label for="venueName">Give your venue a name  </label>
@@ -90,13 +83,13 @@ function AddVenuePage() {
         <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
       </div>
       <div>
-      <label for="venueImage">Give your venue an image  </label>
+      <label for="venueImage">Please provide an image URL of your venue  </label>
       <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
       </div>
-      <div>
+      {/* <div>
       <label for="venueDescription">Give your venue a description  </label>
       <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
-      </div>
+      </div> */}
       <div>
         <label for="venueOwnerEmail">Enter your email  </label>
         <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input>
@@ -111,8 +104,6 @@ function AddVenuePage() {
      </form>
 
 
-     
-
       <div className='button-container'>
           <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
           <Link to='/'>
@@ -125,7 +116,7 @@ function AddVenuePage() {
       
 
       
-      {/* <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image}, {place.venue.description}</p>)}</p>
+      {/* <p>{venueName.map(place => <p>{place.venue_id} , {place.venue_name}, {place.venue_capacity} , {place.venue_address} , {place.venue_geolocation} , {place.venue_owner_email} , {place.venue_start_date} , {place.venue_end_date}, {place.venue_image} </p>)}</p> */}
       {/* <p>{venueCapacity.map(place => <p>{place.venue_id} , {place.venue_capacity}</p>)}</p>
       <p>{venueAddress.map(place => <p>{place.venue_id} , {place.venue_address}</p>)}</p>
       <p>{venueGeoLocation.map(place => <p>{place.venue_id} , {place.venue_geolocation}</p>)}</p> */}

@@ -18,7 +18,7 @@ function Homepage(props) {
       <Banner />
         <div className='homepage-venue-card-container'>
           <div className='homepage-venue-card'>
-          {props.venues.map(place => <VenueCard venueId={place.venue_id} src={place.venue_photo} venueName={place.venue_name} venueAddress={place.venue_address} />)}
+          {props.venues.map(place => <VenueCard venueId={place.venue_id} src={place.venue_image} venueName={place.venue_name} venueAddress={place.venue_address} />)}
             </div>
         </div>
     </div>
