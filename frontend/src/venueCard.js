@@ -27,7 +27,6 @@ function VenueCard({src, venueName, venueAddress, venueId}) {
         <h2>{venueName}</h2>
         <h4>{venueAddress}</h4>
         <Link to={'/venue-summary/' + venueId}>
-        
           <button id="summary-button">Open Venue Summary</button>
         </Link>
       </div>

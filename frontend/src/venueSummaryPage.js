@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
   function VenueSummaryPage(props) {
 
     const [accept, setAccept] = useState(false)
-    const [decline, setDecline] = useState(true)
+    const [decline, setDecline] = useState(false)
 
     const acceptEventRequest = async (id) => {
       const confirmEvent = JSON.stringify(
@@ -26,7 +26,7 @@ import { useParams } from "react-router-dom";
 
     }
 
-    const declineEventRequest = async (e) => {
+    const declineEventRequest = async (id) => {
       const declineEvent = JSON.stringify(
         {
           id: id, 
