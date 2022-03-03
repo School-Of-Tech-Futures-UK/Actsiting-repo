@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
       const confirmEvent = JSON.stringify(
         {
           event_id: id, 
-          status: "confirmed",
+          status: 'confirmed',
         }
       )
   
