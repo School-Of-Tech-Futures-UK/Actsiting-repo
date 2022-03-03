@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './venueSummaryPage.css'
@@ -11,12 +11,14 @@ import { useParams } from "react-router-dom";
     const [decline, setDecline] = useState(false)
 
     const acceptEventRequest = async (id) => {
+      console.log(id)
       const confirmEvent = JSON.stringify(
         {
-          id: id, 
-          status: 'confirmed',
+          event_id: id, 
+          status: "confirmed",
         }
       )
+  
 
         await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
           headers:{ 'Content-Type': 'application/json'},
@@ -29,7 +31,7 @@ import { useParams } from "react-router-dom";
     const declineEventRequest = async (id) => {
       const declineEvent = JSON.stringify(
         {
-          id: id, 
+          event_id: id, 
           status: 'declined',
         }
       )
