@@ -47,7 +47,7 @@ import { useParams } from "react-router-dom";
     const { id } = useParams()
 
     const venue = props.venues.filter(v => {
-      return v.venue_id === id})[0]
+      return v.venue_id == id})[0]
 
     const events = props.showEvents.filter(e => {
       return e.venue_id === venue.venue_id
