@@ -41,7 +41,7 @@ function AddVenuePage() {
         }
     )
 
-    await fetch('https://venues.sotf2022-01.com/api/venue_info", {
+    await fetch("https://venues.sotf2022-01.com/api/venue_info", {
         headers:{ 'Content-Type': 'application/json'},
         method: 'POST',
         body: venueBoard
