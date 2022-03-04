@@ -34,10 +34,8 @@ class InfrastructureStack extends Stack {
     const myBucket = new S3.Bucket(this, 'FileBucket', {
       bucketName: 'actciting-bucket',
       blockPublicAccess: S3.BlockPublicAccess.BLOCK_ALL,
-      encryption: S3.BucketEncryption.KMS_MANAGED,
+      encryption: S3.BucketEncryption.S3_MANAGED,
       removalPolicy: RemovalPolicy.DESTROY, 
-      websiteIndexDocument: 'index.html',
-      websiteErrorDocument: 'index.html',
       autoDeleteObjects: true,
     });
     
@@ -87,38 +85,32 @@ class InfrastructureStack extends Stack {
 
     const cert = acm.Certificate.fromCertificateArn(this, "cert", `arn:aws:acm:us-east-1:${props?.env.account}:certificate/${props?.certId}`);
 
-    const distribution = new cloudfront.CloudFrontWebDistribution(this, 'Cloudfront', {
-      originConfigs: [
-        {
-          customOriginSource: {
-            domainName: `${apiGateway.restApiId}.execute-api.${this.region}.${this.urlSuffix}`,
-            originPath: `/${apiGateway.deploymentStage.stageName}`
-          },
-          behaviors: [{
-            allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
-            pathPattern: 'api/*',
-            defaultTtl: cdk.Duration.millis(0)
-          }],
-        },
-        {
-          s3OriginSource: {
-            s3BucketSource: myBucket,
-            originAccessIdentity,
-          },
-          behaviors: [{
-            isDefaultBehavior: true,
-            functionAssociations: [{
-              eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
-              function: new cloudfront.Function(this, 'Cloudfront Redirect Function', {
-                code: cloudfront.FunctionCode.fromFile({ filePath: "functions/redirect.js" }),
-              })
-            }]
-          }],
+    const distribution = new cloudfront.Distribution(this, 'Cloudfront', {
+      defaultBehavior: {
+        origin: new origins.S3Origin(myBucket, { originAccessIdentity }),
+        functionAssociations: [{
+          eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+          function: new cloudfront.Function(this, 'Cloudfront Redirect Function', {
+            code: cloudfront.FunctionCode.fromFile({ filePath: "functions/redirect.js" }),
+          }),
+        }]
+      },
+      additionalBehaviors: {
+        'api/*': {
+          origin: new origins.HttpOrigin(
+            `${apiGateway.restApiId}.execute-api.${this.region}.${this.urlSuffix}`,
+            {
+              originPath: `/${apiGateway.deploymentStage.stageName}`,
+            }
+          ),
+          allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
+          cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
         }
-      ],
-      viewerCertificate: cloudfront.ViewerCertificate.fromAcmCertificate(cert, { aliases: [`${props.subDomain}.${props.domainName}`] }),
+      },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
-    });
+      domainNames: [`${props?.subDomain}.${props?.domainName}`],
+      certificate: cert,
+    });    
 
 
     /*myBucket.addToResourcePolicy(

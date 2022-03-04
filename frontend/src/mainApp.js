@@ -28,7 +28,7 @@ function MainApp() {
 
     useEffect(() => {
         // fetch the events API and update showEvent state       
-          fetch("http://localhost:3002/events")
+          fetch(process.env.REACT_APP_EVENT_API + "/events")
           .then(response => response.json())
           .then(json => setShowEvents(json))
           .catch(console.log())
