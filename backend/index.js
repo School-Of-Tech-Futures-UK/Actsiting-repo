@@ -22,7 +22,7 @@ const db = Postgres({
 const venueInfo = []
 
 
-server.get('/venue_info/:id', async (req, res) => {
+server.get('/api/venue_info/:id', async (req, res) => {
     const storeVenue = await db.query(
         `   SELECT venue_id, 
             venue_name, 
@@ -40,14 +40,14 @@ server.get('/venue_info/:id', async (req, res) => {
 })
 
 
-server.get('/venue_info', async (req, res) => {
+server.get('/api/venue_info', async (req, res) => {
     const getVenues = await db.query(`SELECT * FROM Listed_Venues`)    
     res.send(getVenues)
     //res.json(storeVenue)
 })
 
 // insert user input field data as new info in the database
-server.post('/venue_info', (req, res) => {
+server.post('/api/venue_info', (req, res) => {
    /* if (typeof req.body != 'object' || req.body.venueID === undefined){ 
         res.status(400)
         res.send('Error')
