@@ -5,18 +5,18 @@ var cors = require('cors');
 const { application } = require('express');
 server.use(cors())
 const Postgres = require('pg-promise')();
-//const serverlessExpress = require('@vendia/serverless-express')
+const serverlessExpress = require('@vendia/serverless-express')
 
 const dbServer = process.env.DB_HOSTNAME || '127.0.0.1'
 const dbPassword = process.env.DB_PASSWORD
 
 
 const db = Postgres({
-    host: dbServer,
-    database: 'gigstr',
-    user: 'gigstr',
-    password: dbPassword,
-    port: 5432,
+    host: dbServer || process.env.DB_HOSTNAME ,
+    database: 'gigstr' || process.env.DB_NAME,
+    user: 'gigstr'|| process.env.DB_USER,
+    password: dbPassword || process.env.DB_PASSWORD,
+    port: 5432, //what about this one? i think leave it? lets flag it for later
 })
 
 const venueInfo = []
@@ -50,8 +50,7 @@ server.get('/venue_info', async (req, res) => {
         venue_owner_email, 
         venue_start_date, 
         venue_end_date, 
-        venue_image 
-        FROM Listed_Venues`)
+        venue_image FROM Listed_Venues`)
     res.send(storeVenue)
     // res.json(venueInfo)
 })
@@ -96,8 +95,12 @@ server.post('/venue_info', (req, res) => {
 })
 
 
-//exports.handler = serverlessExpress({ server });
 
-server.listen(3000, () => {
-    console.log('server is running');
-})
+
+
+
+//server.listen(3000, () => {
+ //   console.log('server is running');
+//})
+
+exports.handler = serverlessExpress({app: server })

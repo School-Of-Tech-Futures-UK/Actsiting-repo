@@ -40,7 +40,7 @@ class InfrastructureStack extends Stack {
       websiteErrorDocument: 'index.html',
       autoDeleteObjects: true,
     });
-
+    
     // Database (external)    
     const dbSecret = secrets.Secret.fromSecretPartialArn(this, 'DB Secrets', `arn:aws:secretsmanager:${this.region}:${this.account}:secret:${props.dbSecret}`)
 
