@@ -20,7 +20,7 @@ import { useParams } from "react-router-dom";
       )
   
 
-        await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
+        await fetch("https://events.soft2022-01.com/api/event/status", {
           headers:{ 'Content-Type': 'application/json'},
           method: 'PUT',
           body: confirmEvent
@@ -36,7 +36,7 @@ import { useParams } from "react-router-dom";
         }
       )
 
-        await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
+        await fetch("https://events.soft2022-01.com/api/event/status", {
           headers:{ 'Content-Type': 'application/json'},
           method: 'PUT',
           body: declineEvent

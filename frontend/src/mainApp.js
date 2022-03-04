@@ -20,7 +20,7 @@ function MainApp() {
     
     useEffect(() => {
         // fetch the venues API and update showEvent state
-        fetch(process.env.REACT_APP_URI + "/venue_info")
+        fetch("https://venues.soft2022-01.com/api/venue_info")
         .then(response => response.json())
         .then(json => setVenues(json))
         .catch(console.log())
@@ -28,7 +28,7 @@ function MainApp() {
 
     useEffect(() => {
         // fetch the events API and update showEvent state       
-          fetch(process.env.REACT_APP_EVENT_API + "/events")
+          fetch("https://events.soft2022-01.com/api/events")
           .then(response => response.json())
           .then(json => setShowEvents(json))
           .catch(console.log())
