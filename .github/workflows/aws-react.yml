@@ -29,7 +29,8 @@ jobs:
 
       - name: Build Frontend
         working-directory: ./frontend
-        run: mv .aws.env .env && npm run build
+        run: npm run build
+        # run: mv .aws.env .env && npm run build
         env:
           CI: false
       
