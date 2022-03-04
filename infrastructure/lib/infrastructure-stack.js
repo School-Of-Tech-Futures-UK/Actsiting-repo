@@ -72,7 +72,12 @@ class InfrastructureStack extends Stack {
     // db.grantDataApiAccess(apiLambda);
 
     const apiGateway = new apigw.LambdaRestApi(this, 'API', {
-      handler: apiLambda
+      handler: apiLambda,
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigw.Cors.ALL_ORIGINS,
+        allowMethods: apigw.Cors.ALL_METHODS,
+        allowHeaders: apigw.Cors.DEFAULT_HEADERS
+      }
     });
 
 
