@@ -139,7 +139,7 @@ class InfrastructureStack extends Stack {
     )*/
     
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-      sources: [s3deploy.Source.asset('..\\frontend\\build')],
+      sources: [s3deploy.Source.asset('../frontend/build')],
       serverSideEncryption: s3deploy.ServerSideEncryption.AES_256,
       destinationBucket: myBucket,
       distribution,
