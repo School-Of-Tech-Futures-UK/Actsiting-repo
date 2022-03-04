@@ -36,8 +36,6 @@ class InfrastructureStack extends Stack {
       blockPublicAccess: S3.BlockPublicAccess.BLOCK_ALL,
       encryption: S3.BucketEncryption.S3_MANAGED,
       removalPolicy: RemovalPolicy.DESTROY, 
-      websiteIndexDocument: 'index.html',
-      websiteErrorDocument: 'index.html',
       autoDeleteObjects: true,
     });
     
