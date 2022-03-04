@@ -41,22 +41,6 @@ server.get('/venue_info/:id', async (req, res) => {
 
 
 server.get('/venue_info', async (req, res) => {
-    const storeVenue = await db.query(
-        `SELECT venue_id, 
-        venue_name, 
-        venue_capacity, 
-        venue_address, 
-        venue_geolocation, 
-        venue_owner_email, 
-        venue_start_date, 
-        venue_end_date, 
-        venue_image 
-        FROM Listed_Venues`)
-    res.send(storeVenue)
-    // res.json(venueInfo)
-})
-
-server.get('/venue_info', async (req, res) => {
     const getVenues = await db.query(`SELECT * FROM Listed_Venues`)    
     res.send(getVenues)
     //res.json(storeVenue)
