@@ -12,10 +12,10 @@ const dbPassword = process.env.DB_PASSWORD
 
 
 const db = Postgres({
-    host: dbServer || process.env.DB_HOSTNAME ,
-    database: 'gigstr' || process.env.DB_NAME,
-    user: 'gigstr'|| process.env.DB_USER,
-    password: dbPassword || process.env.DB_PASSWORD,
+    host: process.env.DB_HOSTNAME || dbServer ,
+    database: process.env.DB_NAME || 'gigstr' ,
+    user: process.env.DB_USER || 'gigstr',
+    password: process.env.DB_PASSWORD || dbPassword ,
     port: 5432, //what about this one? i think leave it? lets flag it for later
 })
 
