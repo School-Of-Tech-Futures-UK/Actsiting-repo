@@ -41,13 +41,13 @@ function AddVenuePage() {
         }
     )
 
-    await fetch("https://venues.sotf2022-01.com/api/venue_info", {
+    await fetch(process.env.REACT_APP_URI + "/venue_info", {
         headers:{ 'Content-Type': 'application/json'},
         method: 'POST',
         body: venueBoard
     })
 
-    const response = await fetch("https://venues.sotf2022-01.com/api/venue_info")
+    const response = await fetch(process.env.REACT_APP_URI + "/venue_info")
 
     const json = await response.json()
     console.log(json)
