@@ -34,7 +34,7 @@ class InfrastructureStack extends Stack {
     const myBucket = new S3.Bucket(this, 'FileBucket', {
       bucketName: 'actciting-bucket',
       blockPublicAccess: S3.BlockPublicAccess.BLOCK_ALL,
-      encryption: S3.BucketEncryption.KMS_MANAGED,
+      encryption: S3.BucketEncryption.S3_MANAGED,
       removalPolicy: RemovalPolicy.DESTROY, 
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'index.html',
