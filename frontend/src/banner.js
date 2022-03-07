@@ -7,8 +7,9 @@ function Banner() {
   return (
     <div className='banner'>
         <div className='banner-info'>
-            <h1>Welcome [user]</h1>
-            <h3>It's time to get 'Actcited'... with venue hosting made easy!</h3>
+            <p id="banner-welcome">Welcome to ActSiting</p>
+            <p id="banner-message">It's time to get 'Actcited'... with venue hosting made easy!             <b></b></p>
+            <p id="banner-instruction">Click on the <em>ADD VENUE </em>  button below to get started</p>
             <Link to='/add-venue' className='banner-info-button'>
               <Button variant='outlined' id='add-venue-button'>
                   Add New Venue
