@@ -23,6 +23,7 @@ function VenueCard({src, venueName, venueAddress, venueId}) {
   return (
     <div className='venue-card-item'>
       <img src={src} alt="venue with text description"/>
+      <br></br>
       <div className='venue-card-item-info'> 
         <h2>{venueName}</h2>
         <h4>{venueAddress}</h4>

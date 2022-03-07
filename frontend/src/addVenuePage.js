@@ -64,7 +64,7 @@ function AddVenuePage() {
 
   return (
     <div className='add-venue-page'>
-      
+      <h1>Enter details of your venue</h1>
       <form>
       <div class="form-group">
         <label for="venueName">Give your venue a name  </label>

@@ -1,12 +1,28 @@
+@font-face {
+  font-family: "Graphik-Regular";
+  src: url("../public/Assets/Fonts/Graphik-Regular.ttf")
+}
+
+@font-face {
+  font-family: "Graphik-Bold";
+  src: url("../public/Assets/Fonts/Graphik-Bold.ttf")
+}
+
+@font-face {
+  font-family: "Graphik-Semibold";
+  src: url("../public/Assets/Fonts/Graphik-Semibold.ttf")
+}
+
 .summary-title{
-    font-weight: bold;
+    font-family: "Graphik-Bold";
 }
 
 #homepage-button{
-    background-color: #555555; 
+    background-color: #FF7800; 
   border: none;
   position: relative;
   left: 30px;
+  border-radius: 12px;
   color: white;
   padding: 15px 25px;
   text-align: center;
@@ -14,4 +30,10 @@
   display: inline-block;
   font-size: 16px;
   margin-top: 20px;
+  font-family: "Graphik-Semibold";
+}
+
+#homepage-button:hover{
+  background-color: #eca566;
+
 }
