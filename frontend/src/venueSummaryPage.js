@@ -7,8 +7,12 @@ import { useParams } from "react-router-dom";
 
   function VenueSummaryPage(props) {
 
-    const [accept, setAccept] = useState(false)
-    const [decline, setDecline] = useState(false)
+    // const [accept, setAccept] = useState(false)
+    // const [decline, setDecline] = useState(false)
+
+    // const acceptToggled = () => setAccept(previous => !previous);
+
+    // const declineToggled = () => setDecline(previous => !previous);
 
     const acceptEventRequest = async (id) => {
       console.log(id)
@@ -19,13 +23,13 @@ import { useParams } from "react-router-dom";
         }
       )
   
-
         await fetch(process.env.REACT_APP_EVENT_API + "/event/status", {
           headers:{ 'Content-Type': 'application/json'},
           method: 'PUT',
           body: confirmEvent
       })
 
+      window.location.reload()
     }
 
     const declineEventRequest = async (id) => {
@@ -42,6 +46,7 @@ import { useParams } from "react-router-dom";
           body: declineEvent
       })
 
+      window.location.reload()
     }
 
     const { id } = useParams()
@@ -68,7 +73,7 @@ import { useParams } from "react-router-dom";
           <br></br>
 
           <h1>Events for this Venue</h1>  
-      <div>{events.map(event => <p><strong>Venue ID:</strong> {event.venue_id} , <strong>Event ID:</strong> {event.event_id}, <strong>Event Date:</strong> {event.date} , <strong>Event Booking Status:</strong> {event.status} <button onClick={()=> acceptEventRequest(event.event_id)}>Accept</button><button onClick={() => declineEventRequest(event.event_id)}>Decline</button></p>)}</div>
+      <div>{events.map(event =><p><strong>Venue ID:</strong> {event.venue_id} , <strong>Event ID:</strong> {event.event_id}, <strong>Event Date:</strong> {event.date} , <strong>Event Booking Status:</strong> {event.status} <button onClick={()=> acceptEventRequest(event.event_id)}>Accept</button><button onClick={() => declineEventRequest(event.event_id)}>Decline</button></p>)}</div>
 
 
       <Link to='/'>
@@ -82,7 +87,3 @@ import { useParams } from "react-router-dom";
 
 export default VenueSummaryPage;
 
-
-
-
-// {"event_id":1,"venue_id":1,"date":"2022-03-05T00:00:00.000Z","event_name":"Andre Ice Cold","event_description":"Outkast Show","event_image":"https://numero.twic.pics/images/article/homepage/full/push-cover-andre3000-numero-magazine.jpg?twic=v1/cover=16:10/resize=1900","artist_name":"Outkast","artist_email":"outkast@gigstr.com","genre":"Hip Hop","status":"confirmed"}

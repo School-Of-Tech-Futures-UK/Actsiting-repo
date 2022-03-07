@@ -59,6 +59,9 @@ function AddVenuePage() {
     setVenueStartDate(json)
     setVenueEndDate(json)
     setVenueImage(json)
+
+    alert('Venue has been successfully added')
+    window.location.reload()
   }
   
 
