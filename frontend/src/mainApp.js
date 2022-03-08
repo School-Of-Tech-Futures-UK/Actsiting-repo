@@ -46,11 +46,11 @@ console.log('type of venue_id(mainapp):', typeof venues.venue_id)
 
             <Switch>
 
-                <Route exact path="/add-venue" component={AddVenuePage}>
+                <Route path="/add-venue" component={AddVenuePage}>
                     <AddVenuePage />
                 </Route>
 
-                <Route exact strict path="/venue-summary/:id" component={VenueSummaryPage}>
+                <Route path="/venue-summary/:id" component={VenueSummaryPage}>
                     <VenueSummaryPage venues={venues} showEvents={showEvents} />
                 </Route>
 

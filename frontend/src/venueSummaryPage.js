@@ -53,15 +53,21 @@ import { useParams } from "react-router-dom";
 
     const { id } = useParams()
 
+    console.log(id)
+    console.log(props.venues)
     const venue = props.venues.filter(v => {
       return v.venue_id == id})[0]
+    
+      if (venue === undefined) {
+        return <div>Loading...</div>
+      }
 
     const events = props.showEvents.filter(e => {
       return e.venue_id === venue.venue_id
     });
 
-    console.log('type of venue_id(summarypage):', typeof venue.venue_id)
-
+    // console.log('type of venue_id(summarypage):', typeof venue.venue_id)
+  
 
   return (
     <>
