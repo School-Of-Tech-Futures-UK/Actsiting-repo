@@ -36,6 +36,8 @@ function MainApp() {
 
 console.log('value of venues', venues)
 console.log('value of events', showEvents)
+console.log('type of venue_id(mainapp):', typeof venues.venue_id)
+
 
     return (
         <>
@@ -44,15 +46,15 @@ console.log('value of events', showEvents)
 
             <Switch>
 
-                <Route path="/add-venue">
+                <Route exact path="/add-venue" component={AddVenuePage}>
                     <AddVenuePage />
                 </Route>
 
-                <Route path="/venue-summary/:id">
+                <Route exact strict path="/venue-summary/:id" component={VenueSummaryPage}>
                     <VenueSummaryPage venues={venues} showEvents={showEvents} />
                 </Route>
 
-                <Route path="/">
+                <Route exact path="/" component={Homepage}>
                     <Homepage venues={venues} showEvents={showEvents} />
                 </Route>
 
