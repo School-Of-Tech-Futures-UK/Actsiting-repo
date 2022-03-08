@@ -14,7 +14,7 @@
   }
 
 .banner {
-    background: url("photos/banner.jpg") center ;background-repeat: no-repeat;
+    background: url("photos/Wave.png") center ;background-repeat: no-repeat;
     height: 70vh;
     background-size: cover;
     background-position: center;
@@ -39,7 +39,7 @@
 
 #banner-message {
     font-family: "Graphik-Semibold";
-    color: aliceblue;
+    color: #FFEB32;
     font-size: larger;
 }
 
@@ -51,21 +51,21 @@
 
 #banner-instruction em {
     font-family: "Graphik-Semibold";
-    color: #701edb;
+    color: #FF7800;
     font-size: larger;
 }
 
 .banner-info {   
     
     background-position: center;
-    background-color: rgba(32, 31, 30, 0.7);
+    
     width: 1000px;
     height: 400px ;
     position: relative;
     
-    padding: 0px;
-    padding-left:20px;
-    padding-top:00px;
+    padding: 20px;
+    padding-left:30px;
+    padding-top:50px;
 }
 
 .banner-info-button {
@@ -83,7 +83,7 @@
 }
 
 #add-venue-button{
-    background-color: #701edb;
+    background-color: #FF7800;
     font-family: "Graphik-Semibold";
   border: none;
   color: white;
@@ -95,7 +95,7 @@
 }
 
 #add-venue-button:hover{
-    background-color: #9d6edb;
+    background-color: #ebaf7b;
     font-family: "Graphik-Semibold";
   border: none;
   color: white;
@@ -108,6 +108,6 @@
 
 #logo-image{
     
-    height: 10%;
+    
     width: auto;
 }

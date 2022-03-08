@@ -13,7 +13,7 @@ function Header() {
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <Link to='/'>
-            <a class="navbar-brand" href="/"> <b> ActSiting</b> | Part of GigStr </a>
+            <a class="navbar-brand" href="/"> <b> ActCiting</b> | Part of GigStr </a>
           </Link>
           </div>
       </nav>

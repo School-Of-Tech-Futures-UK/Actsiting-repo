@@ -4,12 +4,12 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 function Footer() {
   return (
-    <div className="homepage-footer">
-        <p>©2022 Actciting (part of GigStr SOTF)</p>
-        <p>Check out our <a href="https://github.com/School-Of-Tech-Futures-UK/Actsiting-repo">Github
-        <GitHubIcon /></a>
-</p>
-    </div>
+    <footer className="footer">
+       <p id="footerTitle"><strong> GigStr </strong></p>
+            <p> © 2022 GigStr</p>
+            <div id="footerLine"></div>
+            <p> <a class="link" href="https://venues.sotf2022-01.com/">ActCiting</a> &emsp;|&emsp; <a class="link" href="https://events.sotf2022-01.com/">ActSent</a> &emsp;| &emsp;<a class="link" href="https://bookings.sotf2022-01.com/">ActCept</a></p>
+    </footer>
   )
 }
 
