@@ -7,12 +7,6 @@ import { useParams } from "react-router-dom";
 
   function VenueSummaryPage(props) {
 
-    // const [accept, setAccept] = useState(false)
-    // const [decline, setDecline] = useState(false)
-
-    // const acceptToggled = () => setAccept(previous => !previous);
-
-    // const declineToggled = () => setDecline(previous => !previous);
 
     const acceptEventRequest = async (id) => {
       console.log(id)
