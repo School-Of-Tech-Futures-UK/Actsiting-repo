@@ -1,12 +1,27 @@
-.homepage-footer {
-    border-top: 1px solid lightgrey;
+.footer {
+    background-color: rgb(0, 0, 0);
     padding: 20px;
-    background-color: #f7f7f7;
-    bottom: 0;
-    text-align: center;
-}
-
-.homepage-footer > p {
-    padding: 5px;
-    font-size: 14px;
-}
+    padding-left:50px;
+    padding-right: 50px;
+    color: #FFEB32
+  }
+  
+  .bg-dark{
+    background-color: black;
+  }
+  
+  #footerTitle{
+    color: white;
+    font-size: min(5vw, 35px);
+    font-family: "Graphik-Semibold";
+  }
+  
+  #footerLine {
+    height:2px;
+    background: linear-gradient(90deg ,#FFEB32, #FF7800);;
+    margin-bottom: 30px;
+  }
+  
+  .link {
+    color: #FF7800
+  }

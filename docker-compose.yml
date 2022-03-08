@@ -7,28 +7,53 @@ services:
     depends_on:
       - server
     ports:
-      - 5000:3000
+      - 5003:3000
     environment:
-      - REACT_APP_URI=http://localhost:4000
+      - REACT_APP_URI=http://localhost:3003
 
   server:
     build: ./backend
     container_name: "api_server"   
     ports:
-      - 4000:3000
+      - 3003:3000
     depends_on:
       - database
     environment:
-      - DB_HOSTNAME=database_container
-      - DB_PASSWORD=mysecretpassword
+      - DB_HOSTNAME=gigstr-db-container
+      - DB_PASSWORD=gigstr
+
 
   database:
-    image: postgres:latest
-    container_name: "database_container"
+    image: khaashifriaz/gigstr:gigtag   
+    container_name: "gigstr-db-container"
     environment:
-      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_PASSWORD=gigstr
     ports:
       - 5432:5432
+
+  react1:
+    image: khaashifriaz/react1:v1
+    container_name: react1
+    ports:
+      - 5001:3000
+
+  api1:
+    image: khaashifriaz/api1:v1
+    container_name: api1
+    ports:
+      - 3001:3000
+
+  react2:
+    image: khaashifriaz/react2:v1
+    container_name: react2
+    ports:
+      - 5002:3000
+
+  api3:
+    image: khaashifriaz/api2:v1
+    container_name: api2
+    ports:
+      - 3002:3000
 
    
 
