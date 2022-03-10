@@ -89,10 +89,6 @@ function AddVenuePage() {
       <label for="venueImage">Please provide an image URL of your venue  </label>
       <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
       </div>
-      {/* <div>
-      <label for="venueDescription">Give your venue a description  </label>
-      <input ref = {inputRefDescription} type="text" id="venueDescription" placeholder="venueDescription"></input>
-      </div> */}
       <div>
         <label for="venueOwnerEmail">Enter your email  </label>
         {/* <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input> */}
