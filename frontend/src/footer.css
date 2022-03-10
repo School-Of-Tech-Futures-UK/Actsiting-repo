@@ -3,7 +3,8 @@
     padding: 20px;
     padding-left:50px;
     padding-right: 50px;
-    color: #FFEB32
+    color: #FFEB32;
+    bottom: 0;
   }
   
   .bg-dark{

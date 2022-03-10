@@ -104,6 +104,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  transform: scale(1.05);
 }
 
 #logo-image{

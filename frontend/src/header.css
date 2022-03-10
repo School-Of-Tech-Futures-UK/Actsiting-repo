@@ -1,7 +1,23 @@
 .navbar-brand{
-    text-decoration: none;
-    font-size: x-large;
+    
+    font-size: 30px;
+    
 }
+
+a {
+    text-decoration: none;
+    
+}
+
+.bg-dark {
+    background-color: rgba(var(--bs-black-rgb),var(--bs-bg-opacity))!important;
+}
+
+
+
+
+
+
 
 /* .header {
     display: flex;
