@@ -53,6 +53,8 @@
   }
 }
 
+
+
 h1 {
   text-align: center;
   font-family: "Graphik-Bold" ;
@@ -87,8 +89,8 @@ h1 {
 
 .form-texts{
   
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 140px;
+  margin-right: 140px;
   padding: 10px;
   background-color: rgba(252, 252, 252, 0.8);
   border-radius: 10px;
@@ -96,13 +98,52 @@ h1 {
   
 }
 
-.input-field {
-  width: 100%;
+.form-texts:hover{
+  transform: scale(1.02) ;
+}
+
+.form-input{
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+.input-field-capacity {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.input-field-capacity:hover {
+  transform: scale(0.98);
+  background-color: rgb(222, 234, 243);
+}
+
+.input-field-date {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.input-field-date:hover {
+  transform: scale(0.98);
+  background-color: rgb(222, 234, 243);
 }
 
 .input-field:hover {
-  background-color: #92959b;
+  
+  transform: scale(1.01);
+  
 }
+
+
+
+
 
 #form-elements{
   color: #050303;
@@ -129,6 +170,10 @@ label{
   margin: 20px 0 20px 0;
 }
 
+.button-area-item:hover{
+  transform: scale(1.05);
+}
+
 #submit {
   background-color: #FF7800; 
   border: none;
@@ -138,7 +183,7 @@ label{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   font-family: "Graphik-Semibold";
 }
@@ -152,7 +197,7 @@ label{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   font-family: "Graphik-Semibold";
 

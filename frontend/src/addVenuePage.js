@@ -2,7 +2,13 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
+import {
+  Button,
+  Popover,
+  TextField,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 
 
 function AddVenuePage() {
@@ -62,55 +68,80 @@ function AddVenuePage() {
     window.location.reload()
   }
 
+  const useStyles = makeStyles(() => ({
+    textField: {
+      
+      fontWeight: 500
+    },
+    input: {
+      color: "rgb(43, 43, 180)",
+      fontSize: "20px",
+      fontWeight: "bold",
+    }
+  }));
+
+
+  const classes = useStyles()
   return (
+    
     <div className='add-venue-page'>
       <h1>Enter details of your venue</h1>
       <form class="form-group">
         <div class="form-texts">
           <div class="form-input">
             
-            <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName" ></input></div>
-
-
-            <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input></div>
+        <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
+        <div id="form-elements"><TextField class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="e.g. Edward's Rooftop" fullWidth InputProps={{className: classes.input}} /></div>
       
 
-        
-            <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input></div>
-          
+      
+        <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
+        <div id="form-elements"><input class ="input-field-capacity" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="e.g. 1000"></input></div>
+   
 
-          
-            <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input></div>
      
+        <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
+        <div id="form-elements"><TextField class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="e.g. Lovelace Road, T7555K" fullWidth InputProps={{className: classes.input}} /></div>
+       
 
-            <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input></div>
-
-
-            <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/></div>
       
-
-            <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
-            <div id="form-elements"><input class ="form-control input-sm" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
+        <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
+        <div id="form-elements"><TextField class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="e.g. London" fullWidth InputProps={{className: classes.input}} /></div>
       
       
-            <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
-            <div id="form-elements"><input class ="form-control input-sm" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+      
+      <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
+      <div id="form-elements"><TextField class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="e.g. party-rooftop.jpg" fullWidth InputProps={{className: classes.input}} /></div>
+      
+     
+      
+        <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>        
+	      <div id="form-elements"><TextField class ="input-field"  ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="e.g. edward@sotf.com" fullWidth InputProps={{className: classes.input}} /></div>
         
+           
+      
+
+        <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
+        <div id="form-elements"><input class ="input-field-date" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
+
+      
+      
+
+        <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
+        <div id="form-elements"><input class ="input-field-date" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+
+          
+     
            </div>
         </div>
      </form>
 
       <div className='button-container'>
-          <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
+          
           <Link to='/'>
           <button className='button-area-item' id="back-to-home">Back to Homepage</button>
           </Link>
+          <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
       </div>
 
     </div>

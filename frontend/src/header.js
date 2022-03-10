@@ -9,19 +9,16 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function Header() {
   return (
+    <div class="sticky-top">
     <div className='header'>
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-dark bg-dark " >
         <div class="container-fluid">
           <Link to='/'>
             <a class="navbar-brand" href="/"> <b> ActCiting</b> | Part of GigStr </a>
           </Link>
           </div>
       </nav>
-
-       
-
-       
-
+      </div>
       </div>
   )
 }
