@@ -93,11 +93,21 @@ function AddVenuePage() {
             <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
             <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input></div>
       
+<<<<<<< HEAD
+        <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" maxLength={10} id="venueStartDate" placeholder="venueStartDate"></input></div>
+=======
+>>>>>>> f71bfc448bbcab1edb093763d1c217fdb8509de2
       
       
+<<<<<<< HEAD
+        <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" maxLength={10} id="venueEndDate" placeholder="venueEndDate"></input></div>
+=======
             <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
             <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input></div>
       
+>>>>>>> f71bfc448bbcab1edb093763d1c217fdb8509de2
      
       
             <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
