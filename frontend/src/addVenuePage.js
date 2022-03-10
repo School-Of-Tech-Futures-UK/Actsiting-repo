@@ -106,12 +106,12 @@ function AddVenuePage() {
 
       
         <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" maxLength={10} id="venueStartDate" placeholder="venueStartDate"></input></div>
       
 
       
         <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" maxLength={10} id="venueEndDate" placeholder="venueEndDate"></input></div>
      
       </div>
       </div>
