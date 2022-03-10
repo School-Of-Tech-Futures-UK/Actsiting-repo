@@ -2,6 +2,7 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// import { useForm } from "react-hook-form";
 
 
 console.log("edmund is a spoooon")
@@ -65,6 +66,8 @@ function AddVenuePage() {
     window.location.reload()
   }
 
+  // const { register, handleSubmit, formState: { errors } } = useForm();
+
   return (
     <div className='add-venue-page'>
       <h1>Enter details of your venue</h1>
@@ -72,49 +75,57 @@ function AddVenuePage() {
         <div class="form-texts">
           <div class="form-input">
             
-        <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input></div>
+            <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName" ></input></div>
+            {/* {...register("venueName", { required: true })}
+            {errors.venueName && <p>Please enter a venue name</p>} */}
+
+
+            <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input></div>
       
 
-      
-        <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input></div>
-   
-
-     
-        <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input></div>
-       
-
-      
-        <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
-        <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input></div>
-      
-      
-      
-      <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
-      <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input></div>
-      
-     
-      
-        <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
-        <code class="hljs xml">
-	      <div id="form-elements"><input class ="input-field" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/></div>
         
-        </code>
-      
+            <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input></div>
+          
 
+          
+            <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input></div>
       
+<<<<<<< HEAD
         <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
         <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" maxLength={10} id="venueStartDate" placeholder="venueStartDate"></input></div>
+=======
+>>>>>>> f71bfc448bbcab1edb093763d1c217fdb8509de2
       
-
       
+<<<<<<< HEAD
         <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
         <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" maxLength={10} id="venueEndDate" placeholder="venueEndDate"></input></div>
+=======
+            <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input></div>
+      
+>>>>>>> f71bfc448bbcab1edb093763d1c217fdb8509de2
      
-      </div>
-      </div>
+      
+            <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/></div>
+      
+      
+      
+            <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
+          
+
+          
+            <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+     
+           </div>
+        </div>
      </form>
 
       <div className='button-container'>
