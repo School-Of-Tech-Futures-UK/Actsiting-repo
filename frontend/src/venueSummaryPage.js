@@ -71,7 +71,6 @@ import { useParams } from "react-router-dom";
           <div><strong>Venue Start Date</strong>:  {venue.venue_start_date} </div> 
           <div><strong>Venue End Date</strong>:  {venue.venue_end_date}</div>
           </div>
-          <br></br>
 
           <h1>Events for this Venue</h1>  
       <div>{events.map(event =><div class='event-details'><strong>Event Name:</strong> {event.event_name}, <strong>Event Date:</strong> {event.date} , <strong>Event Booking Status:</strong> {event.status} <button id="accept-button" onClick={()=> acceptEventRequest(event.event_id)}>Accept</button> <button id="decline-button" onClick={() => declineEventRequest(event.event_id)}>Decline</button></div>)}</div>
