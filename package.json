@@ -1,12 +1,9 @@
 {
   "devDependencies": {
-    "eslint": "^8.10.0"
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1"
   },
   "dependencies": {
-<<<<<<< HEAD
     "supertest": "^6.2.2"
-=======
-    "react-hook-form": "^7.27.1"
->>>>>>> 6047d4b661b9e0851b0ffe70e04a0fcf53d9444e
   }
 }

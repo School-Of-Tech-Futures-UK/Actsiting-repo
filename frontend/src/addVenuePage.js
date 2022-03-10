@@ -2,7 +2,7 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 
 console.log("edmund is a spoooon")
@@ -66,6 +66,8 @@ function AddVenuePage() {
     window.location.reload()
   }
 
+  // const { register, handleSubmit, formState: { errors } } = useForm();
+
   return (
     <div className='add-venue-page'>
       <h1>Enter details of your venue</h1>
@@ -74,10 +76,11 @@ function AddVenuePage() {
           <div class="form-input">
             
             <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
-            <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName" required></input></div>
-          
+            <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName" ></input></div>
+            {/* {...register("venueName", { required: true })}
+            {errors.venueName && <p>Please enter a venue name</p>} */}
 
-          
+
             <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
             <div id="form-elements"><input class ="input-field" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input></div>
       
