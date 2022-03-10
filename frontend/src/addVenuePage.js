@@ -2,11 +2,12 @@ import React from 'react'
 import './addVenuePage.css';
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-// import { useForm } from "react-hook-form";
 
 
-console.log("edmund is a spoooon")
-   
+// export function validEmail(text) {
+//   const regex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+//   return !regex.test(text);
+// }   
 
 
 function AddVenuePage() {
@@ -77,8 +78,6 @@ function AddVenuePage() {
             
             <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
             <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName" ></input></div>
-            {/* {...register("venueName", { required: true })}
-            {errors.venueName && <p>Please enter a venue name</p>} */}
 
 
             <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
@@ -103,7 +102,6 @@ function AddVenuePage() {
       
             <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
             <div id="form-elements"><input class ="input-field" ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/></div>
-      
       
       
             <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
