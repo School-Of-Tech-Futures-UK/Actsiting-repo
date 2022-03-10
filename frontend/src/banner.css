@@ -1,20 +1,71 @@
-
+@font-face {
+    font-family: "Graphik-Regular";
+    src: url("../public/Assets/Fonts/Graphik-Regular.ttf")
+  }
+  
+  @font-face {
+    font-family: "Graphik-Bold";
+    src: url("../public/Assets/Fonts/Graphik-Bold.ttf")
+  }
+  
+  @font-face {
+    font-family: "Graphik-Semibold";
+    src: url("../public/Assets/Fonts/Graphik-Semibold.ttf")
+  }
 
 .banner {
-    background: url("photos/party-rooftop-celavi.jpg") center ;background-repeat: no-repeat;
+    background: url("photos/Wave.png") center ;background-repeat: no-repeat;
     height: 70vh;
     background-size: cover;
-    position: relative;
+    background-position: center;
+    z-index:-1;
+    object-fit: cover;
+    height:400px;
+    background-color: black;
+    color: white;
+    padding: 0px;
+    padding-left:0px;
+    padding-top:0px;
+    
     
 }
 
-.banner-info {
-    background-color:#faebd7;
-    color: black;
-    padding: 25vh 50px 40px 50px;
-    width: 300px;
-    background-color: rgba(250, 235, 215, 0.7);
-    text-align: center;
+#banner-welcome {
+    font-family: "Graphik-Bold";
+    color: aliceblue;
+    font-size: 50px;
+    
+}
+
+#banner-message {
+    font-family: "Graphik-Semibold";
+    color: #FFEB32;
+    font-size: larger;
+}
+
+#banner-instruction {
+    font-family: "Graphik-Regular";
+    color: aliceblue;
+    font-size: larger;
+}
+
+#banner-instruction em {
+    font-family: "Graphik-Semibold";
+    color: #FF7800;
+    font-size: larger;
+}
+
+.banner-info {   
+    
+    background-position: center;
+    
+    width: 1000px;
+    height: 400px ;
+    position: relative;
+    
+    padding: 20px;
+    padding-left:30px;
+    padding-top:50px;
 }
 
 .banner-info-button {
@@ -32,7 +83,8 @@
 }
 
 #add-venue-button{
-    background-color: #555555; 
+    background-color: #FF7800;
+    font-family: "Graphik-Semibold";
   border: none;
   color: white;
   padding: 15px 32px;
@@ -40,4 +92,22 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+#add-venue-button:hover{
+    background-color: #ebaf7b;
+    font-family: "Graphik-Semibold";
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#logo-image{
+    
+    
+    width: auto;
 }

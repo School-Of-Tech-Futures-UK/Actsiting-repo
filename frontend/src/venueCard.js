@@ -8,21 +8,12 @@ import styled from "styled-components";
 
 
 function VenueCard({src, venueName, venueAddress, venueId}) {
-  
-  // const linkStyle = {
-  //   padding: "1rem",
-  //   fontFamily: "inherit",
-  //   fontWeight: "bold",
-  //   fontSize: "1rem",
-  //   margin: "1rem",
-  //   border: "2px solid #ff7779",
-  //   background: "transparent",
-  //   borderRadius: "5%"
-  // };
+  console.log('type of venue_id(venuecard):', typeof venueId)
 
   return (
     <div className='venue-card-item'>
       <img src={src} alt="venue with text description"/>
+      <br></br>
       <div className='venue-card-item-info'> 
         <h2>{venueName}</h2>
         <h4>{venueAddress}</h4>

@@ -84,8 +84,8 @@ server.post('/api/venue_info', (req, res) => {
 
 
 
-//server.listen(3000, () => {
- //   console.log('server is running');
-//})
+// server.listen(3000, () => {
+//    console.log('server is running');
+// })
 
 exports.handler = serverlessExpress({app: server })

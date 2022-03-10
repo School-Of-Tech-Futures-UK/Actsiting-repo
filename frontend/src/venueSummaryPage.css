@@ -1,12 +1,28 @@
+@font-face {
+  font-family: "Graphik-Regular";
+  src: url("../public/Assets/Fonts/Graphik-Regular.ttf")
+}
+
+@font-face {
+  font-family: "Graphik-Bold";
+  src: url("../public/Assets/Fonts/Graphik-Bold.ttf")
+}
+
+@font-face {
+  font-family: "Graphik-Semibold";
+  src: url("../public/Assets/Fonts/Graphik-Semibold.ttf")
+}
+
 .summary-title{
-    font-weight: bold;
+    font-family: "Graphik-Bold";
 }
 
 #homepage-button{
-    background-color: #555555; 
+    background-color: #FF7800; 
   border: none;
   position: relative;
   left: 30px;
+  border-radius: 12px;
   color: white;
   padding: 15px 25px;
   text-align: center;
@@ -14,4 +30,82 @@
   display: inline-block;
   font-size: 16px;
   margin-top: 20px;
+  font-family: "Graphik-Semibold";
+}
+
+#homepage-button:hover{
+  background-color: #eca566;
+
+}
+
+.summary-details{
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  margin: 50px;
+  border: 0px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.summary-details:hover{
+  transform: scale(1.05);
+}
+
+.event-details{
+  background-color: #b9b7b7;
+  color: rgb(15, 15, 15);
+  margin: 50px;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  padding: 10px;
+  font-size: 20px;
+  
+
+}
+
+.event-details:hover{
+  transform: scale(1.05);
+}
+
+#accept-button{
+  background-color: #1d7216;
+border: none;
+border-radius: 12px;
+color: white;
+padding: 15px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+font-family: "Graphik-Semibold";
+}
+
+#accept-button:hover{
+  background-color: #34b423;
+
+}
+
+#decline-button{
+  background-color: #ad2121;
+border: none;
+border-radius: 12px;
+color: white;
+padding: 15px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+font-family: "Graphik-Semibold";
+}
+
+#decline-button:hover{
+  background-color: #c94545;
+
 }
