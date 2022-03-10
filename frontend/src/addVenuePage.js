@@ -59,8 +59,9 @@ function AddVenuePage() {
     setVenueStartDate(json)
     setVenueEndDate(json)
     setVenueImage(json)
+
+    alert('Venue successfully added')
   }
-  
 
   return (
     <div className='add-venue-page'>
@@ -102,7 +103,6 @@ function AddVenuePage() {
         <label for="venueEndDate">When will your venue be available to?  </label>
         <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
      </form>
-
 
       <div className='button-container'>
           <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
