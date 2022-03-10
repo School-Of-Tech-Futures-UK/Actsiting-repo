@@ -66,7 +66,6 @@
   transition: transform 100ms ease-in;
   padding: 10px;
   font-size: 20px;
-  
 
 }
 
@@ -74,17 +73,26 @@
   transform: scale(1.05);
 }
 
+.event-button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
 #accept-button{
   background-color: #1d7216;
-border: none;
-border-radius: 12px;
-color: white;
-padding: 15px 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 14px;
-font-family: "Graphik-Semibold";
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Graphik-Semibold";
+  margin-right: 10px;
+  margin-left: 5px;
 }
 
 #accept-button:hover{
@@ -103,9 +111,16 @@ text-decoration: none;
 display: inline-block;
 font-size: 14px;
 font-family: "Graphik-Semibold";
+margin-left: 10px;
+margin-right: 5px;
+
 }
 
 #decline-button:hover{
   background-color: #c94545;
 
+}
+
+h1 {
+  margin-top: 20px;
 }

@@ -60,8 +60,9 @@ console.log('type of venue_id(mainapp):', typeof venues.venue_id)
 
             </Switch>
 
-            <Footer />
+            
             </ Router>
+            <Footer />
         </>
     )
 
