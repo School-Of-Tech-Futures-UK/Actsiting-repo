@@ -10,8 +10,10 @@ import {
   Typography,
 } from "@material-ui/core";
 
-console.log("edmund is a spoooon")
-   
+// export function validEmail(text) {
+//   const regex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+//   return !regex.test(text);
+// }   
 
 
 function AddVenuePage() {
@@ -118,24 +120,25 @@ function AddVenuePage() {
       
      
       
-        <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
-        <code class="hljs xml">
-	      <div id="form-elements"><TextField class ="input-field" pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="e.g. edward@sotf.com" fullWidth InputProps={{className: classes.input}} /></div>
+        <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>        
+	      <div id="form-elements"><TextField class ="input-field"  ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="e.g. edward@sotf.com" fullWidth InputProps={{className: classes.input}} /></div>
         
-        </code>
+           
       
 
-      
         <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
         <div id="form-elements"><input class ="input-field-date" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
-      
 
       
+      
+
         <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
         <div id="form-elements"><input class ="input-field-date" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+
+          
      
-      </div>
-      </div>
+           </div>
+        </div>
      </form>
 
       <div className='button-container'>
