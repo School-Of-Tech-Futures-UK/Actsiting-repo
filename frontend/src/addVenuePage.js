@@ -60,52 +60,59 @@ function AddVenuePage() {
     setVenueEndDate(json)
     setVenueImage(json)
 
+
     alert('Venue has been successfully added')
     window.location.reload()
   }
-  
 
   return (
     <div className='add-venue-page'>
       <h1>Enter details of your venue</h1>
-      <form>
-      <div class="form-group">
-        <label for="venueName">Give your venue a name  </label>
-        <input ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input>
-      </div>
-      <div>
-        <label for="venueCapacity">What is your venue capacity?  </label>
-        <input ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input>
-      </div> 
-      <div>
-        <label for="venueAddress">Enter venue address  </label>
-        <input ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input>
-      </div> 
-      <div>
-        <label for="venueGeoLocation">Enter Geolocation  </label>
-        <input ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input>
-      </div>
-      <div>
-      <label for="venueImage">Please provide an image URL of your venue  </label>
-      <input ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input>
-      </div>
-      <div>
-        <label for="venueOwnerEmail">Enter your email  </label>
-        {/* <input ref = {inputRefOwnerEmail} type="text" id="venueOwnerEmail" placeholder="venueEmailOwner"></input> */}
-        <code class="hljs xml"><form>
-	        <input pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/>
-          </form>
-        </code>
-      </div>
-      <div>
-        <label for="venueStartDate">When will your venue be available from?  </label>
-        <input ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input>
-      </div>
-      <div>
-        <label for="venueEndDate">When will your venue be available to?  </label>
-        <input ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
-     </form>
+      <form class="form-group">
+        <div class="form-texts">
+          <div class="form-input">
+            
+            <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="venueName"></input></div>
+          
 
+          
+            <div id="form-elements"><label for="venueCapacity">What is your venue capacity?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefCapacity} type="number" id="venueCapacity" placeholder="venueCapacity"></input></div>
+      
+
+        
+            <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="venueAddress"></input></div>
+          
+
+          
+            <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="venueGeoLocation"></input></div>
+      
+      
+      
+            <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="venueImage"></input></div>
+      
+     
+      
+            <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="venueEmailOwner"/></div>
+      
+      
+      
+            <div id="form-elements"><label for="venueStartDate">When will your venue be available from?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefStartDate} type="date" id="venueStartDate" placeholder="venueStartDate"></input></div>
+          
+
+          
+            <div id="form-elements"><label for="venueEndDate">When will your venue be available to?  </label></div>
+            <div id="form-elements"><input class ="input-field" ref = {inputRefEndDate} type="date" id="venueEndDate" placeholder="venueEndDate"></input></div>
+     
+           </div>
+        </div>
+     </form>
 
       <div className='button-container'>
           <button className='button-area-item' id="submit" onClick={PostVenueName}>SUBMIT</button>
