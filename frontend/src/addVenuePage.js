@@ -91,7 +91,7 @@ function AddVenuePage() {
           <div class="form-input">
             
         <div id="form-elements"><label for="venueName">Give your venue a name  </label></div>
-        <div id="form-elements"><TextField class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="e.g. Edward's Rooftop" fullWidth InputProps={{className: classes.input}} /></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefName} type="text" id="venueName" placeholder="e.g. Edward's Rooftop"  /></div>
       
 
       
@@ -101,22 +101,22 @@ function AddVenuePage() {
 
      
         <div id="form-elements"><label for="venueAddress">Enter venue address  </label></div>
-        <div id="form-elements"><TextField class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="e.g. Lovelace Road, T7555K" fullWidth InputProps={{className: classes.input}} /></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefAddress} type="text" id="venueAddress" placeholder="e.g. Lovelace Road, T7555K"  /></div>
        
 
       
         <div id="form-elements"><label for="venueGeoLocation">Enter Geolocation  </label></div>
-        <div id="form-elements"><TextField class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="e.g. London" fullWidth InputProps={{className: classes.input}} /></div>
+        <div id="form-elements"><input class ="input-field" ref = {inputRefGeoLocation} type="text" id="venueGeoLocation" placeholder="e.g. London"  /></div>
       
       
       
       <div id="form-elements"><label for="venueImage">Please provide an image URL of your venue  </label></div>
-      <div id="form-elements"><TextField class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="e.g. party-rooftop.jpg" fullWidth InputProps={{className: classes.input}} /></div>
+      <div id="form-elements"><input class ="input-field" ref = {inputRefImage} type="text" id="venueImage" placeholder="e.g. party-rooftop.jpg"  /></div>
       
      
       
         <div id="form-elements"><label for="venueOwnerEmail">Enter your email  </label></div>        
-	      <div id="form-elements"><TextField class ="input-field"  ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="e.g. edward@sotf.com" fullWidth InputProps={{className: classes.input}} /></div>
+	      <div id="form-elements"><input class ="input-field"  ref = {inputRefOwnerEmail} id="venueOwnerEmail" placeholder="e.g. edward@sotf.com"  /></div>
         
            
       
