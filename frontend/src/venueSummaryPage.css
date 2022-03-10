@@ -92,6 +92,7 @@
   font-size: 14px;
   font-family: "Graphik-Semibold";
   margin-right: 10px;
+  margin-left: 5px;
 }
 
 #accept-button:hover{
@@ -111,6 +112,7 @@ display: inline-block;
 font-size: 14px;
 font-family: "Graphik-Semibold";
 margin-left: 10px;
+margin-right: 5px;
 
 }
 
